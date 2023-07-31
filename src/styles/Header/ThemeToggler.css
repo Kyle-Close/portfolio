@@ -6,6 +6,7 @@
   border-radius: 30px;
   background-color: rgb(61, 61, 61);
   position: relative;
+  flex-shrink: 0;
 }
 
 .circle {
