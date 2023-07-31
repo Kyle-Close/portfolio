@@ -1,0 +1,19 @@
+.about-container {
+  font-weight: 500;
+  display: flex;
+  flex-direction: column;
+  color: rgb(221, 221, 221);
+}
+
+.about-header {
+  margin-bottom: 0;
+}
+
+.about-container > p {
+  margin: 8px 0;
+}
+
+.technologies-title {
+  margin-top: 8px;
+  color: #599cff;
+}

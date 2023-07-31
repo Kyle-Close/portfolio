@@ -1,6 +1,7 @@
 import "./App.css";
 import Header from "./components/Header/Header";
-import TitleSection from "./components/Title-Section/TitleSection";
+import TitleSection from "./components/TitleSection";
+import AboutSection from "./components/AboutSection";
 
 function App() {
   return (
@@ -8,6 +9,7 @@ function App() {
       <div className="app-wrapper">
         <Header />
         <TitleSection />
+        <AboutSection />
       </div>
     </div>
   );

@@ -1,6 +1,6 @@
 import React from "react";
-import "../../styles/Title-Section/TitleSection.css";
-import WebImg from "../../img/web.svg";
+import "../styles/Title-Section/TitleSection.css";
+import WebImg from "../img/web.svg";
 
 function TitleSection() {
   return (
@@ -17,6 +17,7 @@ function TitleSection() {
           W<span>EB</span> D<span>EVELOPER</span>
         </h1>
       </div>
+      <div className="separator"></div>
     </div>
   );
 }
