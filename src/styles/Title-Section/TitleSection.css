@@ -1,16 +1,22 @@
 .title-section-container {
-  margin-top: 50px;
+  margin-top: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
 
 .intro {
   color: #599cff;
   margin-bottom: 0;
+  width: 100%;
 }
 
 .name {
   margin-top: 0;
   margin-bottom: 5px;
   color: #eeeeee;
+  animation-name: slideName;
+  animation-duration: 1s;
 }
 
 .name > span {
@@ -38,8 +44,10 @@
 .web-img-container {
   width: 30px;
   height: 30px;
-  animation-name: rollIn;
-  animation-duration: 1.5s;
+  animation-name: spin, fadeIn;
+  animation-duration: 5s, 2s;
+  animation-iteration-count: infinite, 1;
+  animation-timing-function: linear;
 }
 
 .web-img-container > img {
@@ -47,15 +55,24 @@
   width: 100%;
 }
 
-@keyframes rollIn {
+@keyframes fadeIn {
   from {
-    transform: translateX(-60px) rotate(0deg);
-  }
-  70% {
-    transform: translateX(24px) rotate(360deg);
+    opacity: 0;
   }
   to {
-    transform: translateX(0px) rotate(200deg);
+    opacity: 100%;
+  }
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(180deg);
+  }
+  to {
+    transform: rotate(360deg);
   }
 }
 
@@ -66,4 +83,38 @@
   to {
     transform: translateX(0px);
   }
+}
+
+@keyframes slideName {
+  from {
+    transform: translateX(-200%);
+  }
+  to {
+    transform: translateX(0px);
+  }
+}
+
+@media screen and (min-width: 380px) {
+  .name {
+    font-size: 40px;
+  }
+  .name > span {
+    font-size: 32px;
+  }
+  .intro {
+    font-size: 18px;
+  }
+  .web-developer {
+    font-size: 36px;
+  }
+  .web-developer > span {
+    font-size: 28px;
+  }
+  .web-img-container {
+    width: 35px;
+    height: 35px;
+  }
+}
+
+@media screen and (min-width: 650px) {
 }
