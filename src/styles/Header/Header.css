@@ -3,9 +3,3 @@
   justify-content: space-between;
   gap: 20%;
 }
-
-@media screen and (min-width: 650px) {
-  .header-container {
-    margin: 0 35px;
-  }
-}

@@ -17,10 +17,6 @@ function ThemeToggler() {
     });
   }
 
-  React.useEffect(() => {
-    console.log(selectedTheme);
-  }, [selectedTheme]);
-
   return (
     <div onClick={handleOnClick} className="toggler-container">
       <div

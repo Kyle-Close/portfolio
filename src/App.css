@@ -9,3 +9,9 @@
   margin: 30px 25px;
   flex-grow: 1;
 }
+
+@media screen and (min-width: 650px) {
+  .app-wrapper {
+    margin: 30px 35px;
+  }
+}
