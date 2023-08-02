@@ -1,6 +1,8 @@
 import React from "react";
 import "../styles/About/AboutSection.css";
 
+import Carousel from "./Carousel";
+
 function AboutSection() {
   return (
     <div className="about-container">
@@ -24,6 +26,7 @@ function AboutSection() {
         well as personal passion projects.
       </p>
       <h4 className="technologies-title">Technologies:</h4>
+      <Carousel />
     </div>
   );
 }
