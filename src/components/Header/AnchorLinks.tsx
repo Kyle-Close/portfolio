@@ -4,10 +4,10 @@ import "../../styles/Header/AnchorLinks.css";
 function AnchorLinks() {
   return (
     <div className="anchor-links-container">
-      <a>Home</a>
-      <a>About</a>
-      <a>Projects</a>
-      <a>Contact</a>
+      <a href=".">Home</a>
+      <a href=".">About</a>
+      <a href=".">Projects</a>
+      <a href=".">Contact</a>
     </div>
   );
 }

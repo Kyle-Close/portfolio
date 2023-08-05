@@ -1,10 +1,7 @@
 import * as React from "react";
 import { styled } from "@mui/material/styles";
 import FormGroup from "@mui/material/FormGroup";
-import FormControlLabel from "@mui/material/FormControlLabel";
 import Switch from "@mui/material/Switch";
-import Stack from "@mui/material/Stack";
-import Typography from "@mui/material/Typography";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 import { CssBaseline } from "@mui/material";
 
@@ -29,7 +26,7 @@ function ThemeToggler() {
       <CssBaseline />
       <FormGroup>
         <MaterialUISwitch
-          sx={{ m: 1 }}
+          sx={{ mt: -1 }}
           defaultChecked
           onChange={handleThemeToggle}
         />
@@ -77,7 +74,7 @@ const MaterialUISwitch = styled(Switch)(({ theme }) => ({
     },
   },
   "& .MuiSwitch-thumb": {
-    backgroundColor: theme.palette.mode === "dark" ? "#003892" : "#029af2",
+    backgroundColor: theme.palette.mode === "dark" ? "#029af2" : "#003892",
     width: 32,
     height: 32,
     "&:before": {
