@@ -1,4 +1,5 @@
 import React from "react";
+import { CSSTransition, TransitionGroup } from "react-transition-group";
 import "../styles/Carousel/Carousel.css";
 
 import jsCarouselImg from "../img/js-carousel.svg";
@@ -17,36 +18,70 @@ function AutoCarousel() {
   function nextSlide() {}
 
   let itemStyle = {
-    transform: `translate(-${50 * currentSlide + 5 * currentSlide}px)`,
+    transition:
+      "transform: `translate(-${75 * currentSlide + 10 * currentSlide}px)`",
   };
 
   return (
     <div className="carousel-container">
       <div className="carousel">
-        <div style={itemStyle} className="item 1">
-          <img src={jsCarouselImg} />
-        </div>
-        <div style={itemStyle} className="item 2">
-          <img src={tsCarouselImg} />
-        </div>
-        <div style={itemStyle} className="item 3">
-          <img src={reactCarouselImg} />
-        </div>
-        <div style={itemStyle} className="item 4">
-          <img src={htmlCarouselImg} />
-        </div>
-        <div style={itemStyle} className="item 5">
-          <img src={tailwindCarouselImg} />
-        </div>
-        <div style={itemStyle} className="item 6">
-          <img src={nodeCarouselImg} />
-        </div>
-        <div style={itemStyle} className="item 7">
-          <img src={gitCarouselImg} />
-        </div>
-        <div style={itemStyle} className="item 8">
-          <img src={mySQLCarouselImg} />
-        </div>
+        <TransitionGroup>
+          <CSSTransition key={currentSlide} timeout={500} classNames="item">
+            <div className="test">
+              <div style={itemStyle} className="item 1">
+                <img src={jsCarouselImg} />
+              </div>
+              <div style={itemStyle} className="item 2">
+                <img src={tsCarouselImg} />
+              </div>
+              <div style={itemStyle} className="item 3">
+                <img src={reactCarouselImg} />
+              </div>
+              <div style={itemStyle} className="item 4">
+                <img src={htmlCarouselImg} />
+              </div>
+              <div style={itemStyle} className="item 5">
+                <img src={tailwindCarouselImg} />
+              </div>
+              <div style={itemStyle} className="item 6">
+                <img src={nodeCarouselImg} />
+              </div>
+              <div style={itemStyle} className="item 7">
+                <img src={gitCarouselImg} />
+              </div>
+              <div style={itemStyle} className="item 8">
+                <img src={mySQLCarouselImg} />
+              </div>
+
+              {/* ------------------------------------------------------------ */}
+
+              <div style={itemStyle} className="item 1">
+                <img src={jsCarouselImg} />
+              </div>
+              <div style={itemStyle} className="item 2">
+                <img src={tsCarouselImg} />
+              </div>
+              <div style={itemStyle} className="item 3">
+                <img src={reactCarouselImg} />
+              </div>
+              <div style={itemStyle} className="item 4">
+                <img src={htmlCarouselImg} />
+              </div>
+              <div style={itemStyle} className="item 5">
+                <img src={tailwindCarouselImg} />
+              </div>
+              <div style={itemStyle} className="item 6">
+                <img src={nodeCarouselImg} />
+              </div>
+              <div style={itemStyle} className="item 7">
+                <img src={gitCarouselImg} />
+              </div>
+              <div style={itemStyle} className="item 8">
+                <img src={mySQLCarouselImg} />
+              </div>
+            </div>
+          </CSSTransition>
+        </TransitionGroup>
       </div>
       <button>Next</button>
     </div>
