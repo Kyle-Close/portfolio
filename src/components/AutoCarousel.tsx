@@ -1,91 +1,53 @@
 import React from "react";
-import { CSSTransition, TransitionGroup } from "react-transition-group";
+import { motion } from "framer-motion";
+import { data } from "../data";
+
 import "../styles/Carousel/Carousel.css";
 
-import jsCarouselImg from "../img/js-carousel.svg";
-import tsCarouselImg from "../img/ts-carousel.svg";
-import reactCarouselImg from "../img/react-carousel.svg";
-import htmlCarouselImg from "../img/html-carousel.svg";
-import tailwindCarouselImg from "../img/tailwind-carousel.svg";
-import nodeCarouselImg from "../img/node-carousel.svg";
-import gitCarouselImg from "../img/git-carousel.svg";
-import mySQLCarouselImg from "../img/mySQL-carousel.svg";
-
 function AutoCarousel() {
-  const [currentSlide, setCurrentSlide] = React.useState<number>(0);
-  const [autoPlay, setAutoPlay] = React.useState(true);
+  const translateArr = createTranslateArray(85);
+  console.log(translateArr);
 
-  function nextSlide() {}
-
-  let itemStyle = {
-    transition:
-      "transform: `translate(-${75 * currentSlide + 10 * currentSlide}px)`",
-  };
+  const carouselItems = data.src.map((src, index) => {
+    return (
+      <motion.div
+        animate={{ transform: translateArr }}
+        transition={{
+          duration: 10,
+          repeat: Infinity,
+          repeatType: "loop",
+          ease: "linear",
+        }}
+        className={`item ${index}`}
+        key={index}
+      >
+        <img src={src} />
+      </motion.div>
+    );
+  });
 
   return (
     <div className="carousel-container">
       <div className="carousel">
-        <TransitionGroup>
-          <CSSTransition key={currentSlide} timeout={500} classNames="item">
-            <div className="test">
-              <div style={itemStyle} className="item 1">
-                <img src={jsCarouselImg} />
-              </div>
-              <div style={itemStyle} className="item 2">
-                <img src={tsCarouselImg} />
-              </div>
-              <div style={itemStyle} className="item 3">
-                <img src={reactCarouselImg} />
-              </div>
-              <div style={itemStyle} className="item 4">
-                <img src={htmlCarouselImg} />
-              </div>
-              <div style={itemStyle} className="item 5">
-                <img src={tailwindCarouselImg} />
-              </div>
-              <div style={itemStyle} className="item 6">
-                <img src={nodeCarouselImg} />
-              </div>
-              <div style={itemStyle} className="item 7">
-                <img src={gitCarouselImg} />
-              </div>
-              <div style={itemStyle} className="item 8">
-                <img src={mySQLCarouselImg} />
-              </div>
-
-              {/* ------------------------------------------------------------ */}
-
-              <div style={itemStyle} className="item 1">
-                <img src={jsCarouselImg} />
-              </div>
-              <div style={itemStyle} className="item 2">
-                <img src={tsCarouselImg} />
-              </div>
-              <div style={itemStyle} className="item 3">
-                <img src={reactCarouselImg} />
-              </div>
-              <div style={itemStyle} className="item 4">
-                <img src={htmlCarouselImg} />
-              </div>
-              <div style={itemStyle} className="item 5">
-                <img src={tailwindCarouselImg} />
-              </div>
-              <div style={itemStyle} className="item 6">
-                <img src={nodeCarouselImg} />
-              </div>
-              <div style={itemStyle} className="item 7">
-                <img src={gitCarouselImg} />
-              </div>
-              <div style={itemStyle} className="item 8">
-                <img src={mySQLCarouselImg} />
-              </div>
-            </div>
-          </CSSTransition>
-        </TransitionGroup>
+        {carouselItems}
+        {carouselItems}
       </div>
-      <button>Next</button>
     </div>
   );
+}
+
+function createTranslateArray(size: number) {
+  let length = data.src.length;
+  let result = [];
+
+  for (let i = 0; i < length + 1; i++) {
+    // Loop through each item in carousel
+    for (let j = 0; j < 2; j++) {
+      result.push(`translate(-${size * i}px)`);
+    }
+  }
+
+  return result;
 }
 
 export default AutoCarousel;

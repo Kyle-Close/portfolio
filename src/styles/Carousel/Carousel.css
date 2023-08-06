@@ -17,29 +17,3 @@
   gap: 10px;
   overflow: hidden;
 }
-
-.test {
-  display: flex;
-}
-
-/* Start of entering stage */
-.item-enter {
-  opacity: 0;
-}
-
-/* During entering stage */
-.item-enter-active {
-  opacity: 1;
-  transition: opacity 500ms ease-in;
-}
-
-/* Start of exiting stage */
-.item-exit {
-  opacity: 1;
-}
-
-/* During exiting stage */
-.item-exit-active {
-  opacity: 0;
-  transition: opacity 500ms ease-in;
-}
