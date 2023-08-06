@@ -1,7 +1,6 @@
 import React from "react";
+import AutoCarousel from "./AutoCarousel";
 import "../styles/About/AboutSection.css";
-
-import Carousel from "./Carousel";
 
 function AboutSection() {
   return (
@@ -26,7 +25,7 @@ function AboutSection() {
         well as personal passion projects.
       </p>
       <h4 className="technologies-title">Technologies:</h4>
-      <Carousel />
+      <AutoCarousel />
     </div>
   );
 }
