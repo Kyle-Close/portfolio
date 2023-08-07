@@ -2,12 +2,10 @@
   font-weight: 500;
   display: flex;
   flex-direction: column;
-  color: rgb(221, 221, 221);
 }
 
 .about-header {
   margin-bottom: 0;
-  color: white;
 }
 
 .about-container > p {

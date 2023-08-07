@@ -13,7 +13,6 @@
 .name {
   margin-top: 0;
   margin-bottom: 5px;
-  color: white;
   animation-name: slideName;
   animation-duration: 1s;
 }
@@ -25,7 +24,6 @@
 .web-developer {
   margin: 0;
   font-size: 26px;
-  color: #bebebe;
   animation-name: slideWebDev;
   animation-duration: 1.5s;
 }
