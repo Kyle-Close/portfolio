@@ -32,7 +32,7 @@ function AutoCarousel() {
         <motion.div
           animate={{ transform: translateArr }}
           transition={{
-            duration: 10,
+            duration: 15,
             repeat: Infinity,
             repeatType: "reverse",
             ease: "linear",
@@ -54,6 +54,7 @@ function AutoCarousel() {
   return (
     <div className="carousel-container">
       <div className="carousel">
+        {getCarouselItems(windowWidth)}
         {getCarouselItems(windowWidth)}
         {getCarouselItems(windowWidth)}
       </div>
