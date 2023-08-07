@@ -24,6 +24,7 @@ function AutoCarousel() {
         key={index}
       >
         <img src={item.src} />
+        <p>{item.title}</p> {/* This line breaks the responsive design */}
       </motion.div>
     );
   });
