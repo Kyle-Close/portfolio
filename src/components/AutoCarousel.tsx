@@ -6,36 +6,56 @@ import "../styles/Carousel/Carousel.css";
 import { reverse } from "dns";
 
 function AutoCarousel() {
-  const translateArr = createTranslateArray(85);
-  console.log(translateArr);
+  const [windowWidth, setWindowWidth] = React.useState(window.innerWidth); // Store the window width
 
-  const carouselItems = data.map((item, index) => {
-    return (
-      <motion.div
-        animate={{ transform: translateArr }}
-        transition={{
-          duration: 10,
-          repeat: Infinity,
-          repeatType: "reverse",
-          ease: "linear",
-          delay: 0,
-        }}
-        className={`item ${index}`}
-        key={index}
-      >
-        <div className="carousel-img-container">
-          <img src={item.src} />
-        </div>
-        <p>{item.title}</p> {/* This line breaks the responsive design */}
-      </motion.div>
-    );
-  });
+  React.useEffect(() => {
+    const handleResize = () => {
+      setWindowWidth(window.innerWidth);
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    // Clean up the listener when the component unmounts
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
+  React.useEffect(() => {
+    console.log(typeof windowWidth);
+  }, [windowWidth]);
+
+  function getCarouselItems(screenSize: number) {
+    const translateArr = createTranslateArray(screenSize <= 650 ? 85 : 110);
+    const carouselItems = data.map((item, index) => {
+      return (
+        <motion.div
+          animate={{ transform: translateArr }}
+          transition={{
+            duration: 10,
+            repeat: Infinity,
+            repeatType: "reverse",
+            ease: "linear",
+            delay: 0,
+          }}
+          className={`item ${index}`}
+          key={index}
+        >
+          <div className="carousel-img-container">
+            <img src={item.src} />
+          </div>
+          <p>{item.title}</p> {/* This line breaks the responsive design */}
+        </motion.div>
+      );
+    });
+    return carouselItems;
+  }
 
   return (
     <div className="carousel-container">
       <div className="carousel">
-        {carouselItems}
-        {carouselItems}
+        {getCarouselItems(windowWidth)}
+        {getCarouselItems(windowWidth)}
       </div>
     </div>
   );
