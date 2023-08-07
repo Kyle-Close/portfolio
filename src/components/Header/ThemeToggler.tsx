@@ -50,7 +50,7 @@ const MaterialUISwitch = styled(Switch)(({ theme }) => ({
   "& .MuiSwitch-switchBase": {
     margin: 1,
     padding: 0,
-    transform: "translateX(6px)",
+    transform: "translateX(0px)",
     [theme.breakpoints.up("sm")]: {
       margin: 3,
       padding: 3,
@@ -58,7 +58,7 @@ const MaterialUISwitch = styled(Switch)(({ theme }) => ({
     },
     "&.Mui-checked": {
       color: "#fff",
-      transform: "translateX(22px)",
+      transform: "translateX(25px)",
       [theme.breakpoints.up("sm")]: {
         transform: "translateX(34px)",
       },

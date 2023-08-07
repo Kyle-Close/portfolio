@@ -7,6 +7,7 @@
 
 .about-header {
   margin-bottom: 0;
+  color: white;
 }
 
 .about-container > p {
@@ -16,4 +17,16 @@
 .technologies-title {
   margin-top: 8px;
   color: #599cff;
+}
+
+.the-odin-project {
+  color: #599cff;
+  padding: 0 5px;
+}
+
+@media screen and (min-width: 650px) {
+  .about-container {
+    font-weight: 500;
+    font-size: 1.19rem;
+  }
 }

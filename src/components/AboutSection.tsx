@@ -14,10 +14,17 @@ function AboutSection() {
         development.
       </p>
       <p>
-        After graduating I was looking for a way to learn much more about the
-        web. That’s when I came across The Odin Project. Which is an open-source
-        course that really resonated with my desire for a comprehensive,
-        project-based learning experience.
+        After graduating, I was eager to deepen my knowledge about the web.
+        That's when I discovered
+        <a
+          target="_blank"
+          href="https://www.theodinproject.com"
+          className="the-odin-project"
+        >
+          The Odin Project,
+        </a>
+        an open-source, self-guided course that resonated with my desire for a
+        comprehensive, project-based learning experience.
       </p>
       <p>
         The Odin Project has guided me in my self-learning journey. In the next

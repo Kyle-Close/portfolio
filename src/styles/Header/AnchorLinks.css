@@ -8,8 +8,7 @@
 }
 
 .anchor-links-container > a {
-  text-decoration: none;
-  color: whitesmoke;
+  color: white;
 }
 
 @media screen and (min-width: 380px) {
