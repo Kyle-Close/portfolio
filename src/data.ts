@@ -7,15 +7,13 @@ import nodeCarouselImg from "./img/node-carousel.svg";
 import gitCarouselImg from "./img/git-carousel.svg";
 import mySQLCarouselImg from "./img/mySQL-carousel.svg";
 
-export const data = {
-  src: [
-    jsCarouselImg,
-    tsCarouselImg,
-    reactCarouselImg,
-    htmlCarouselImg,
-    tailwindCarouselImg,
-    nodeCarouselImg,
-    gitCarouselImg,
-    mySQLCarouselImg,
-  ],
-};
+export const data = [
+  { src: jsCarouselImg, title: "Javascript" },
+  { src: tsCarouselImg, title: "Typescript" },
+  { src: reactCarouselImg, title: "React" },
+  { src: htmlCarouselImg, title: "HTML 5" },
+  { src: tailwindCarouselImg, title: "Tailwind" },
+  { src: nodeCarouselImg, title: "NodeJS" },
+  { src: gitCarouselImg, title: "Git" },
+  { src: mySQLCarouselImg, title: "mySQL" },
+];

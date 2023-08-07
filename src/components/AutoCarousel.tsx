@@ -9,7 +9,7 @@ function AutoCarousel() {
   const translateArr = createTranslateArray(85);
   console.log(translateArr);
 
-  const carouselItems = data.src.map((src, index) => {
+  const carouselItems = data.map((item, index) => {
     return (
       <motion.div
         animate={{ transform: translateArr }}
@@ -23,7 +23,7 @@ function AutoCarousel() {
         className={`item ${index}`}
         key={index}
       >
-        <img src={src} />
+        <img src={item.src} />
       </motion.div>
     );
   });
@@ -39,7 +39,7 @@ function AutoCarousel() {
 }
 
 function createTranslateArray(size: number) {
-  let length = data.src.length;
+  let length = data.length;
   let result = [];
 
   for (let i = 0; i < length + 1; i++) {
