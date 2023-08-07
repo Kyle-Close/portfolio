@@ -23,7 +23,9 @@ function AutoCarousel() {
         className={`item ${index}`}
         key={index}
       >
-        <img src={item.src} />
+        <div className="carousel-img-container">
+          <img src={item.src} />
+        </div>
         <p>{item.title}</p> {/* This line breaks the responsive design */}
       </motion.div>
     );

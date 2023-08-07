@@ -1,17 +1,21 @@
 .carousel-container {
-  height: 75px;
+  height: 100px;
   width: 100%;
+  overflow-x: hidden;
+  position: relative;
 }
 
 .item {
-  flex: 0 0 75px;
   display: flex;
   flex-direction: column;
+  gap: 5%;
+  align-items: center;
 }
 
 .item > p {
   font-size: 10px;
   font-weight: 600;
+  margin: 0;
 }
 
 .item > img {
@@ -20,18 +24,30 @@
 
 .carousel {
   display: flex;
+  position: absolute;
   height: 100%;
   gap: 10px;
-  overflow: hidden;
+}
+
+.carousel-img-container {
+  width: 75px;
+}
+
+.carousel-img-container > img {
+  width: 100%;
 }
 
 @media screen and (min-width: 650px) {
   .carousel-container {
-    height: 125px;
+    height: 150px;
     width: 100%;
   }
 
-  .item {
-    flex: 0 0 100px;
+  .carousel-img-container {
+    width: 100px;
+  }
+
+  .item > p {
+    font-size: 14px;
   }
 }
