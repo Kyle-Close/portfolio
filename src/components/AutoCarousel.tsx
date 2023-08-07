@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { data } from "../data";
 
 import "../styles/Carousel/Carousel.css";
+import { reverse } from "dns";
 
 function AutoCarousel() {
   const translateArr = createTranslateArray(85);
@@ -15,8 +16,9 @@ function AutoCarousel() {
         transition={{
           duration: 10,
           repeat: Infinity,
-          repeatType: "loop",
+          repeatType: "reverse",
           ease: "linear",
+          delay: 0,
         }}
         className={`item ${index}`}
         key={index}
