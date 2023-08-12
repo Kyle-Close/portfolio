@@ -2,36 +2,28 @@ import * as React from "react";
 import { styled } from "@mui/material/styles";
 import FormGroup from "@mui/material/FormGroup";
 import Switch from "@mui/material/Switch";
-import { ThemeProvider, createTheme } from "@mui/material/styles";
-import { CssBaseline } from "@mui/material";
+import { useTheme } from "@mui/material/styles";
 
-function ThemeToggler() {
-  const [themeMode, setThemeMode] = React.useState<"light" | "dark">("light");
+interface HeaderProps {
+  handleThemeToggle: () => void;
+}
 
-  const theme = React.useMemo(
-    () =>
-      createTheme({
-        palette: {
-          mode: themeMode,
-        },
-      }),
-    [themeMode]
-  );
+function ThemeToggler({ handleThemeToggle }: HeaderProps) {
+  const theme = useTheme();
+  const [themeState, setThemeState] = React.useState(theme);
+  const isDarkMode = theme.palette.mode === "dark";
 
-  const handleThemeToggle = () => {
-    setThemeMode((prevMode) => (prevMode === "light" ? "dark" : "light"));
-  };
+  console.log("----- ThemeToggler -----");
+  console.log("here", themeState);
+
   return (
-    <ThemeProvider theme={theme}>
-      <CssBaseline />
-      <FormGroup>
-        <MaterialUISwitch
-          sx={{ mt: -1 }}
-          defaultChecked
-          onChange={handleThemeToggle}
-        />
-      </FormGroup>
-    </ThemeProvider>
+    <FormGroup>
+      <MaterialUISwitch
+        sx={{ mt: -1 }}
+        checked={isDarkMode}
+        onChange={handleThemeToggle}
+      />
+    </FormGroup>
   );
 }
 
@@ -48,6 +40,7 @@ const MaterialUISwitch = styled(Switch)(({ theme }) => ({
     padding: 10,
   },
   "& .MuiSwitch-switchBase": {
+    transition: "transform 0.3s ease-in-out",
     margin: 1,
     padding: 0,
     transform: "translateX(0px)",
