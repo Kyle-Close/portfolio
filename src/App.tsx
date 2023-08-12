@@ -7,15 +7,14 @@ import { createTheme, ThemeProvider, styled } from "@mui/material/styles";
 import CssBaseline from "@mui/material/CssBaseline";
 
 function App() {
-  const [themeMode, setThemeMode] = React.useState<"light" | "dark">("dark");
-
-  React.useEffect(() => {
-    console.log(`themeMode changed to ${themeMode}`);
-  }, [themeMode]);
+  const [darkMode, setDarkMode] = React.useState(true);
 
   const theme = createTheme({
     palette: {
-      mode: themeMode,
+      mode: darkMode ? "dark" : "light",
+      background: {
+        default: darkMode ? "hsl(230, 17%, 14%)" : "hsl(0, 0%, 100%)",
+      },
     },
   });
 
@@ -31,7 +30,7 @@ function App() {
 
   const handleThemeToggle = () => {
     console.log("Switch state: ");
-    setThemeMode((prevMode) => (prevMode === "light" ? "dark" : "light"));
+    setDarkMode((prevDarkMode) => (prevDarkMode ? false : true));
   };
 
   return (
