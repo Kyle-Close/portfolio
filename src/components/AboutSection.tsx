@@ -1,5 +1,6 @@
 import React from "react";
 import AutoCarousel from "./AutoCarousel";
+import Link from "@mui/material/Link";
 import "../styles/About/AboutSection.css";
 
 function AboutSection() {
@@ -15,15 +16,9 @@ function AboutSection() {
       </p>
       <p>
         After graduating, I was eager to deepen my knowledge about the web.
-        That's when I discovered
-        <a
-          target="_blank"
-          href="https://www.theodinproject.com"
-          className="the-odin-project"
-        >
-          The Odin Project,
-        </a>
-        an open-source, self-guided course that resonated with my desire for a
+        That's when I discovered{" "}
+        <Link href="https://www.theodinproject.com">The Odin Project,</Link> an
+        open-source, self-guided course that resonated with my desire for a
         comprehensive, project-based learning experience.
       </p>
       <p>

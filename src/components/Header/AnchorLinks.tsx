@@ -1,13 +1,14 @@
 import React from "react";
+import Link from "@mui/material/Link";
 import "../../styles/Header/AnchorLinks.css";
 
 function AnchorLinks() {
   return (
     <div className="anchor-links-container">
-      <a href=".">Home</a>
-      <a href=".">About</a>
-      <a href=".">Projects</a>
-      <a href=".">Contact</a>
+      <Link href="#">Home</Link>
+      <Link href="#">About</Link>
+      <Link href="#">Projects</Link>
+      <Link href="#">Contact</Link>
     </div>
   );
 }

@@ -3,8 +3,8 @@ import { styled } from "@mui/material/styles";
 import FormGroup from "@mui/material/FormGroup";
 import Switch from "@mui/material/Switch";
 import { useTheme } from "@mui/material/styles";
-import SwitchUnstyled from "@mui/material/Switch";
 import { FormControlLabel } from "@mui/material";
+import Typography from "@mui/material/Typography";
 
 interface HeaderProps {
   handleThemeToggle: () => void;
@@ -27,6 +27,8 @@ function ThemeToggler({ handleThemeToggle, darkMode }: HeaderProps) {
   return (
     <FormGroup>
       <FormControlLabel
+        labelPlacement={"bottom"}
+        sx={{ fontWeight: "bold" }}
         control={
           <MaterialUISwitch
             sx={{ m: 1 }}
@@ -35,7 +37,7 @@ function ThemeToggler({ handleThemeToggle, darkMode }: HeaderProps) {
             checked={isDarkMode}
           />
         }
-        label="MUI switch"
+        label=""
       />
     </FormGroup>
   );
