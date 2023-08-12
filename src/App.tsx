@@ -29,16 +29,19 @@ function App() {
   }));
 
   const handleThemeToggle = () => {
-    console.log("Switch state: ");
-    setDarkMode((prevDarkMode) => (prevDarkMode ? false : true));
+    setDarkMode((prevDarkMode) => !prevDarkMode);
   };
+
+  React.useEffect(() => {
+    console.log("darkMode: ", darkMode);
+  }, [darkMode]);
 
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
       <StyledApp>
         <div className="app-wrapper">
-          <Header handleThemeToggle={handleThemeToggle} />
+          <Header handleThemeToggle={handleThemeToggle} darkMode={darkMode} />
           <TitleSection />
           <AboutSection />
         </div>

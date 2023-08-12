@@ -5,15 +5,16 @@ import ThemeToggler from "./ThemeToggler";
 
 interface HeaderProps {
   handleThemeToggle: () => void;
+  darkMode: boolean;
 }
 
-function Header({ handleThemeToggle }: HeaderProps) {
+function Header({ handleThemeToggle, darkMode }: HeaderProps) {
   return (
     <div className="header-container">
       <AnchorLinks />
-      <ThemeToggler handleThemeToggle={handleThemeToggle} />
+      <ThemeToggler handleThemeToggle={handleThemeToggle} darkMode={darkMode} />
     </div>
   );
 }
 
-export default Header;
+export default React.memo(Header);
