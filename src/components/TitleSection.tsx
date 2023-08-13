@@ -1,4 +1,5 @@
 import React from "react";
+import Typography from "@mui/material/Typography";
 import "../styles/Title-Section/TitleSection.css";
 import WebImg from "../img/web.svg";
 
@@ -13,9 +14,9 @@ function TitleSection() {
         <div className="web-img-container">
           <img src={WebImg} alt="" />
         </div>
-        <h1 className="web-developer">
+        <Typography>
           W<span>EB</span> D<span>EVELOPER</span>
-        </h1>
+        </Typography>
       </div>
       <div className="separator"></div>
     </div>

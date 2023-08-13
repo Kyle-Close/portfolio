@@ -10,6 +10,9 @@ function App() {
   const [darkMode, setDarkMode] = React.useState(true);
 
   const theme = createTheme({
+    typography: {
+      fontFamily: "Montserrat, Arial, sans-serif", // Update this to your desired font family
+    },
     palette: {
       mode: darkMode ? "dark" : "light",
       background: {

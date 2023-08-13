@@ -28,7 +28,7 @@ function ThemeToggler({ handleThemeToggle, darkMode }: HeaderProps) {
     <FormGroup>
       <FormControlLabel
         labelPlacement={"bottom"}
-        sx={{ fontWeight: "bold" }}
+        sx={{ fontWeight: "bold", margin: "0" }}
         control={
           <MaterialUISwitch
             sx={{ m: 1 }}
