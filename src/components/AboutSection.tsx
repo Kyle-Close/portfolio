@@ -5,7 +5,7 @@ import "../styles/About/AboutSection.css";
 
 function AboutSection() {
   return (
-    <div className="about-container">
+    <div className="about-container" id="about">
       <h3 className="about-header">About</h3>
       <p>
         Hello, my name is Kyle. I’m a computer engineering graduate currently

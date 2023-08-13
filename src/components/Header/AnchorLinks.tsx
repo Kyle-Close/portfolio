@@ -7,9 +7,9 @@ function AnchorLinks() {
   return (
     <div className="anchor-links-container">
       <Link href="#">Home</Link>
-      <Link href="#">About</Link>
-      <Link href="#">Projects</Link>
-      <Link href="#">Contact</Link>
+      <Link href="#about">About</Link>
+      <Link href="#projects">Projects</Link>
+      <Link href="#contact">Contact</Link>
     </div>
   );
 }
