@@ -67,6 +67,8 @@ const titleContainer = {
   display: "flex",
   flexWrap: "wrap",
   justifyContent: "space-between",
+  paddingBottom: "10px",
+  borderBottom: "rgba(255, 255, 255, 0.5) solid 1px",
 };
 
 const name = {
