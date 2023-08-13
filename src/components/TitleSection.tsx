@@ -35,6 +35,7 @@ function TitleSection({ darkMode }: TitleSectionProps) {
           </Typography>
         </Box>
       </Box>
+      <Box sx={lineSeparator}></Box>
     </Box>
   );
 }
@@ -58,7 +59,8 @@ const intro = {
 const nameAndWebDev = {
   display: "flex",
   justifyContent: "space-between",
-  gap: "15px",
+  alignItems: "flex-end",
+  gap: "5px",
   width: "100%",
   flexWrap: "wrap",
 };
@@ -67,8 +69,6 @@ const titleContainer = {
   display: "flex",
   flexWrap: "wrap",
   justifyContent: "space-between",
-  paddingBottom: "10px",
-  borderBottom: "rgba(255, 255, 255, 0.5) solid 1px",
 };
 
 const name = {
@@ -76,7 +76,7 @@ const name = {
   alignItems: "center",
   fontWeight: "600",
   fontSize: {
-    xs: "1.2rem",
+    xs: "1.3rem",
     sm: "1.5rem",
     md: "1.8rem",
   },
@@ -85,20 +85,28 @@ const name = {
 
 const webDevContainer = {
   display: "flex",
-  alignItems: "center",
-  gap: "10px",
+  alignItems: "flex-end",
+  gap: "5px",
 };
 
 const webDev = {
+  opacity: "0.9",
   display: "inline-block", // Explicitly setting display to inline-block
   alignItems: "center",
   fontWeight: "500",
   fontSize: {
-    xs: "1rem",
+    xs: "1.1rem",
     sm: "1.2rem",
     md: "1.5rem",
   },
   fontFamily: "Roboto Slab",
+};
+
+export const lineSeparator = {
+  width: "100%",
+  backgroundColor: "gray",
+  height: "1px",
+  marginTop: "20px",
 };
 
 export default TitleSection;

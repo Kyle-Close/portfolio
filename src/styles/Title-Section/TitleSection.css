@@ -9,8 +9,8 @@
 }
 
 .web-img-container {
-  width: 30px;
-  height: 30px;
+  width: 25px;
+  height: 25px;
   animation-name: spin, fadeIn;
   animation-duration: 5s, 2s;
   animation-iteration-count: infinite, 1;
@@ -20,6 +20,7 @@
 .web-img-container > img {
   height: 100%;
   width: 100%;
+  opacity: 0.9;
 }
 
 @keyframes fadeIn {
@@ -61,22 +62,7 @@
   }
 }
 
-@media screen and (min-width: 380px) {
-  .name {
-    font-size: 40px;
-  }
-  .name > span {
-    font-size: 32px;
-  }
-  .intro {
-    font-size: 18px;
-  }
-  .web-developer {
-    font-size: 36px;
-  }
-  .web-developer > span {
-    font-size: 28px;
-  }
+@media screen and (min-width: 600px) {
   .web-img-container {
     width: 35px;
     height: 35px;
