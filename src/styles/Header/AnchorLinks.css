@@ -10,10 +10,6 @@
   text-decoration: none;
 }
 
-.web-developer {
-  color: rgb(95, 95, 95);
-}
-
 @media screen and (min-width: 380px) {
   .anchor-links-container {
     font-size: 14px;

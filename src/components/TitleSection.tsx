@@ -9,7 +9,7 @@ function TitleSection() {
     <Box sx={titleContainer}>
       <h5 className="intro">Hi, my name is</h5>
       <Box sx={nameAndWebDev}>
-        <Typography sx={name} variant="h2" component="h2">
+        <Typography sx={name} variant="h2" component="h2" className="name">
           KYLE CLOSE
         </Typography>
 
@@ -18,7 +18,12 @@ function TitleSection() {
             <img src={WebImg} alt="" />
           </div>
 
-          <Typography sx={webDev} variant="h4" component="h4">
+          <Typography
+            sx={webDev}
+            variant="h2"
+            component="h2"
+            className="web-developer"
+          >
             WEB DEVELOPER
           </Typography>
         </Box>
@@ -61,11 +66,12 @@ const name = {
 
 const webDevContainer = {
   display: "flex",
+  alignItems: "center",
   gap: "10px",
 };
 
 const webDev = {
-  opacity: "0.7",
+  opacity: "0.75",
   "::first-letter": {
     fontSize: {
       xs: "1.7rem",
