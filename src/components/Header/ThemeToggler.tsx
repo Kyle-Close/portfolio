@@ -4,7 +4,6 @@ import FormGroup from "@mui/material/FormGroup";
 import Switch from "@mui/material/Switch";
 import { useTheme } from "@mui/material/styles";
 import { FormControlLabel } from "@mui/material";
-import Typography from "@mui/material/Typography";
 
 interface HeaderProps {
   handleThemeToggle: () => void;
@@ -44,6 +43,9 @@ function ThemeToggler({ handleThemeToggle, darkMode }: HeaderProps) {
 }
 
 const MaterialUISwitch = styled(Switch)(({ theme }) => ({
+  "&& .MuiSwitch-root": {
+    margin: 0,
+  },
   width: 62,
   height: 34,
   padding: 7,
