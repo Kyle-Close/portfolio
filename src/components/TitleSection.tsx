@@ -2,45 +2,83 @@ import React from "react";
 import Typography from "@mui/material/Typography";
 import "../styles/Title-Section/TitleSection.css";
 import WebImg from "../img/web.svg";
+import { Box } from "@mui/material";
 
 function TitleSection() {
   return (
-    <div className="title-section-container">
+    <Box sx={titleContainer}>
       <h5 className="intro">Hi, my name is</h5>
-      <h1 className="name">
-        K<span>YLE </span>C<span>LOSE</span>
-      </h1>
-      <div className="web-dev-section">
-        <div className="web-img-container">
-          <img src={WebImg} alt="" />
-        </div>
-        <Typography
-          sx={{
-            "::first-letter": {
-              fontSize: {
-                xs: "1.7rem",
-                sm: "2rem",
-                md: "2.5rem",
-              },
-              fontWeight: "bolder",
-            },
-            display: "inline-block", // Explicitly setting display to inline-block
-            alignItems: "center",
-            fontWeight: "500",
-            fontSize: {
-              xs: "1.2rem",
-              sm: "1.5rem",
-              md: "1.8rem",
-            },
-          }}
-          variant="h4"
-          component="span"
-        >
-          WEB DEVELOPER
+      <Box
+        sx={{
+          display: "flex",
+          justifyContent: "space-between",
+          width: "100%",
+          flexWrap: "wrap",
+        }}
+      >
+        <Typography sx={name} variant="h2" component="h2">
+          KYLE CLOSE
         </Typography>
-      </div>
-    </div>
+
+        <Box sx={webDevContainer}>
+          <div className="web-img-container">
+            <img src={WebImg} alt="" />
+          </div>
+
+          <Typography sx={webDev} variant="h4" component="h4">
+            WEB DEVELOPER
+          </Typography>
+        </Box>
+      </Box>
+    </Box>
   );
 }
+
+const titleContainer = {
+  display: "flex",
+  flexWrap: "wrap",
+  justifyContent: "space-between",
+};
+
+const name = {
+  "::first-letter": {
+    fontSize: {
+      xs: "1.7rem",
+      sm: "2rem",
+      md: "2.5rem",
+    },
+  },
+  display: "inline-block", // Explicitly setting display to inline-block
+  alignItems: "center",
+  fontWeight: "500",
+  fontSize: {
+    xs: "1.2rem",
+    sm: "1.5rem",
+    md: "1.8rem",
+  },
+};
+
+const webDevContainer = {
+  display: "flex",
+  gap: "10px",
+};
+
+const webDev = {
+  "::first-letter": {
+    fontSize: {
+      xs: "1.7rem",
+      sm: "2rem",
+      md: "2.5rem",
+    },
+  },
+  display: "inline-block", // Explicitly setting display to inline-block
+  alignItems: "center",
+  fontWeight: "500",
+  fontSize: {
+    xs: "1.2rem",
+    sm: "1.5rem",
+    md: "1.8rem",
+  },
+};
 
 export default TitleSection;

@@ -8,11 +8,10 @@ function AboutSection() {
     <div className="about-container">
       <h3 className="about-header">About</h3>
       <p>
-        As you may have already gathered, my name is Kyle. I’m a computer
-        engineering graduate currently working as a software developer in
-        Canada. Although my professional work involves a broader range of
-        software development, I've always been particularly interested in web
-        development.
+        Hello, my name is Kyle. I’m a computer engineering graduate currently
+        working as a software developer in Canada. Although my professional work
+        involves a broader range of software development, I've always been
+        particularly interested in web development.
       </p>
       <p>
         After graduating, I was eager to deepen my knowledge about the web.
