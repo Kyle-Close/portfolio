@@ -72,13 +72,6 @@ const titleContainer = {
 };
 
 const name = {
-  "::first-letter": {
-    fontSize: {
-      xs: "1.7rem",
-      sm: "2rem",
-      md: "2.5rem",
-    },
-  },
   display: "inline-block", // Explicitly setting display to inline-block
   alignItems: "center",
   fontWeight: "600",
@@ -87,6 +80,7 @@ const name = {
     sm: "1.5rem",
     md: "1.8rem",
   },
+  fontFamily: "Roboto Slab",
 };
 
 const webDevContainer = {
@@ -96,14 +90,6 @@ const webDevContainer = {
 };
 
 const webDev = {
-  opacity: "0.75",
-  "::first-letter": {
-    fontSize: {
-      xs: "1.7rem",
-      sm: "2rem",
-      md: "2.5rem",
-    },
-  },
   display: "inline-block", // Explicitly setting display to inline-block
   alignItems: "center",
   fontWeight: "500",
@@ -112,6 +98,7 @@ const webDev = {
     sm: "1.2rem",
     md: "1.5rem",
   },
+  fontFamily: "Roboto Slab",
 };
 
 export default TitleSection;
