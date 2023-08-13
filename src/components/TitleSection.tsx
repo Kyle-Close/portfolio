@@ -1,13 +1,20 @@
 import React from "react";
 import Typography from "@mui/material/Typography";
 import "../styles/Title-Section/TitleSection.css";
-import WebImg from "../img/web.svg";
+import WebImgDark from "../img/web.svg";
+import WebImgLight from "../img/web-light.svg";
 import { Box } from "@mui/material";
 
-function TitleSection() {
+interface TitleSectionProps {
+  darkMode: boolean;
+}
+
+function TitleSection({ darkMode }: TitleSectionProps) {
   return (
     <Box sx={titleContainer}>
-      <h5 className="intro">Hi, my name is</h5>
+      <Typography sx={intro} variant="h6" component="h6">
+        Hi, my name is
+      </Typography>
       <Box sx={nameAndWebDev}>
         <Typography sx={name} variant="h2" component="h2" className="name">
           KYLE CLOSE
@@ -15,7 +22,7 @@ function TitleSection() {
 
         <Box sx={webDevContainer}>
           <div className="web-img-container">
-            <img src={WebImg} alt="" />
+            <img src={darkMode ? WebImgDark : WebImgLight} alt="" />
           </div>
 
           <Typography
@@ -31,6 +38,22 @@ function TitleSection() {
     </Box>
   );
 }
+
+const intro = {
+  marginTop: {
+    xs: "15px",
+    sm: "20px",
+    md: "30px",
+  },
+  color: "#599cff",
+  marginBottom: "0",
+  width: "100%",
+  fontSize: {
+    xs: "0.8rem",
+    sm: "1rem",
+    md: "1.2rem",
+  },
+};
 
 const nameAndWebDev = {
   display: "flex",

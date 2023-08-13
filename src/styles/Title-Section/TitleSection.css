@@ -1,29 +1,9 @@
-.title-section-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-}
-
-.intro {
-  color: #599cff;
-  margin-bottom: 0;
-  width: 100%;
-}
-
 .name {
-  margin-top: 0;
-  margin-bottom: 5px;
   animation-name: slideName;
   animation-duration: 1s;
 }
 
-.name > span {
-  font-size: 25px;
-}
-
 .web-developer {
-  margin: 0;
-  font-size: 26px;
   animation-name: slideWebDev;
   animation-duration: 1.5s;
 }

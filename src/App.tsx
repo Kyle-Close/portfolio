@@ -45,7 +45,7 @@ function App() {
       <StyledApp>
         <div className="app-wrapper">
           <Header handleThemeToggle={handleThemeToggle} darkMode={darkMode} />
-          <TitleSection />
+          <TitleSection darkMode={darkMode} />
           <AboutSection />
         </div>
       </StyledApp>
