@@ -14,11 +14,31 @@ function TitleSection() {
         <div className="web-img-container">
           <img src={WebImg} alt="" />
         </div>
-        <Typography>
-          W<span>EB</span> D<span>EVELOPER</span>
+        <Typography
+          sx={{
+            "::first-letter": {
+              fontSize: {
+                xs: "1.7rem",
+                sm: "2rem",
+                md: "2.5rem",
+              },
+              fontWeight: "bolder",
+            },
+            display: "inline-block", // Explicitly setting display to inline-block
+            alignItems: "center",
+            fontWeight: "500",
+            fontSize: {
+              xs: "1.2rem",
+              sm: "1.5rem",
+              md: "1.8rem",
+            },
+          }}
+          variant="h4"
+          component="span"
+        >
+          WEB DEVELOPER
         </Typography>
       </div>
-      <div className="separator"></div>
     </div>
   );
 }
