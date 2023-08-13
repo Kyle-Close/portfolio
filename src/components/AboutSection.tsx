@@ -2,6 +2,8 @@ import React from "react";
 import AutoCarousel from "./AutoCarousel";
 import Link from "@mui/material/Link";
 import "../styles/About/AboutSection.css";
+import { lineSeparator } from "./TitleSection";
+import { Box } from "@mui/material";
 
 function AboutSection() {
   return (
@@ -27,6 +29,7 @@ function AboutSection() {
       </p>
       <h4 className="technologies-title">Technologies:</h4>
       <AutoCarousel />
+      <Box sx={lineSeparator}></Box>
     </div>
   );
 }

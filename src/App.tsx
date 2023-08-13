@@ -3,8 +3,10 @@ import React from "react";
 import Header from "./components/Header/Header";
 import TitleSection from "./components/TitleSection";
 import AboutSection from "./components/AboutSection";
-import { createTheme, ThemeProvider, styled } from "@mui/material/styles";
+import ProjectSection from "./components/ProjectSection";
+
 import CssBaseline from "@mui/material/CssBaseline";
+import { createTheme, ThemeProvider, styled } from "@mui/material/styles";
 
 function App() {
   const [darkMode, setDarkMode] = React.useState(true);
@@ -47,6 +49,7 @@ function App() {
           <Header handleThemeToggle={handleThemeToggle} darkMode={darkMode} />
           <TitleSection darkMode={darkMode} />
           <AboutSection />
+          <ProjectSection />
         </div>
       </StyledApp>
     </ThemeProvider>
