@@ -1,5 +1,6 @@
 import { Box, Button, Typography } from "@mui/material";
 import React from "react";
+import ProjectImg from "../img/project-img.png";
 
 function ProjectSection() {
   return (
@@ -8,23 +9,31 @@ function ProjectSection() {
         Projects
       </Typography>
       <Box sx={projectContainer}>
-        <Typography
-          color="secondary"
-          sx={projectTitle}
-          variant="h5"
-          component="h5"
-        >
-          Snake
-        </Typography>
-        <Typography sx={technologiesTitle}>
-          Technologies:{" "}
-          <Box color={"white"} sx={{ fontWeight: "400" }} component="span">
-            React, Redux, Tailwind
+        <Box>
+          <Typography
+            color="secondary"
+            sx={projectTitle}
+            variant="h5"
+            component="h5"
+          >
+            Snake
+          </Typography>
+          <Typography sx={technologiesTitle}>
+            Technologies:{" "}
+            <Box color={"white"} sx={{ fontWeight: "400" }} component="span">
+              React, Redux, Tailwind
+            </Box>
+          </Typography>
+          <Typography sx={{ marginTop: "5px", fontSize: "0.9rem" }}>
+            Clone of the classic snake game. Select from the varying
+            difficulties.
+          </Typography>
+        </Box>
+        <Box sx={imgContainer}>
+          <Box>
+            <img src={ProjectImg} />
           </Box>
-        </Typography>
-        <Typography sx={{ marginTop: "5px", fontSize: "0.9rem" }}>
-          Clone of the classic snake game. Select from the varying difficulties.
-        </Typography>
+        </Box>
         <Box sx={buttonContainer}>
           <Button
             color="secondary"
@@ -43,6 +52,11 @@ function ProjectSection() {
   );
 }
 
+const imgContainer = {
+  display: "flex",
+  flexGrow: "1",
+};
+
 const projectSection = {
   marginTop: "20px",
   display: "flex",
@@ -54,11 +68,13 @@ const projectHeading = {
   fontWeight: "600",
   fontSize: "1.2rem",
   fontFamily: "Roboto Slab",
+  marginBottom: "10px",
 };
 
 const projectContainer = {
   display: "flex",
-  flexDirection: "column",
+  flexWrap: "wrap",
+  gap: "15px",
 };
 
 const projectTitle = {
