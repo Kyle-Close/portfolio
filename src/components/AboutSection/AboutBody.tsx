@@ -4,7 +4,7 @@ import { Typography } from "@mui/material";
 function AboutBody() {
   return (
     <>
-      <Typography variant="body1" sx={{ marginTop: "0" }}>
+      <Typography variant="body1" style={{ margin: "0" }}>
         Hello, my name is Kyle. I’m a computer engineering graduate currently
         working as a software developer in Canada. Although my professional work
         involves a broader range of software development, I've always been

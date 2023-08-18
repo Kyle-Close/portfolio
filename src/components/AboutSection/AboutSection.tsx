@@ -7,9 +7,7 @@ import AboutBody from "./AboutBody";
 function AboutSection() {
   return (
     <Box sx={aboutContainer} id="about">
-      <Typography sx={headerTitle} variant="h5">
-        About
-      </Typography>
+      <Typography variant="h5">About</Typography>
 
       <AboutBody />
 
@@ -27,20 +25,10 @@ function AboutSection() {
 const aboutContainer = {
   display: "flex",
   flexDirection: "column",
-  fontWeight: "400",
-  fontSize: {
-    xs: "1rem",
-    sm: "1.5rem",
-  },
-};
-
-const headerTitle = {
-  marginBottom: "0",
-  fontFamily: "Roboto Slab",
 };
 
 const technologiesTitle = {
-  marginTop: "8px",
+  margin: "8px 0",
   color: "#599cff",
 };
 
