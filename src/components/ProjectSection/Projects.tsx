@@ -2,21 +2,35 @@ import ProjectText from "./ProjectText";
 import ProjectImg from "./ProjectImg";
 import ProjectButtons from "./ProjectButtons";
 
+import ProjectData from "../../data/projectData";
+
 import { Box } from "@mui/material";
 
-function Projects() {
-  return (
-    <>
-      <Box sx={textAndButtonsContainer}>
-        <ProjectText />
-        <ProjectButtons />
-      </Box>
+interface ProjectsProps {
+  darkMode: boolean;
+}
 
-      <Box sx={imgContainer}>
-        <ProjectImg />
-      </Box>
-    </>
-  );
+function Projects({ darkMode }: ProjectsProps) {
+  const projects = ProjectData.map((data) => {
+    return (
+      <>
+        <Box sx={textAndButtonsContainer}>
+          <ProjectText
+            title={data.name}
+            technologies={data.techStack}
+            description={data.description}
+          />
+          <ProjectButtons live={data.live} source={data.source} />
+        </Box>
+
+        <Box sx={imgContainer}>
+          <ProjectImg src={darkMode ? data.imgDark : data.imgLight} />
+        </Box>
+      </>
+    );
+  });
+
+  return <>{projects}</>;
 }
 
 const textAndButtonsContainer = {
@@ -36,10 +50,5 @@ const imgContainer = {
     sm: "center",
   },
 };
-
-/*  TODO
-    - Img needs to scale for screen size. Probably 2 sizes. 1 for large and 1 for phone
-    - Text size needs adjusted at all screen sizes.
-*/
 
 export default Projects;

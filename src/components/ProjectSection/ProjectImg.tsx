@@ -1,19 +1,22 @@
 import { Box } from "@mui/material";
-import imgSrc from "../../img/project-img.png";
 
-function ProjectImg() {
+interface ProjectImgProps {
+  src: string;
+}
+
+function ProjectImg({ src }: ProjectImgProps) {
   return (
     <Box>
-      <Box component="img" src={imgSrc} alt="Description" sx={img} />
+      <Box component="img" src={src} alt="Description" sx={img} />
     </Box>
   );
 }
 
 const img = {
   width: {
-    xs: "200px",
-    sm: "220px",
-    md: "240px",
+    xs: "230px",
+    sm: "250px",
+    md: "300px",
   },
 };
 

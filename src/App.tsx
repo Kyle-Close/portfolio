@@ -122,7 +122,7 @@ function App() {
           <Header handleThemeToggle={handleThemeToggle} darkMode={darkMode} />
           <TitleSection darkMode={darkMode} />
           <AboutSection />
-          <ProjectSection />
+          <ProjectSection darkMode={darkMode} />
         </div>
       </StyledApp>
     </ThemeProvider>

@@ -1,12 +1,29 @@
 import { Box, Button } from "@mui/material";
 
-function ProjectButtons() {
+interface ProjectButtonsProps {
+  live: string;
+  source: string;
+}
+
+function ProjectButtons({ live, source }: ProjectButtonsProps) {
   return (
     <Box sx={buttonContainer}>
-      <Button color="secondary" size="large" sx={liveButton} variant="outlined">
+      <Button
+        href={live}
+        color="secondary"
+        size="large"
+        sx={liveButton}
+        variant="outlined"
+        target="_blank"
+      >
         Live
       </Button>
-      <Button sx={sourceButton} variant="outlined">
+      <Button
+        href={source}
+        sx={sourceButton}
+        variant="outlined"
+        target="_blank"
+      >
         Source
       </Button>
     </Box>

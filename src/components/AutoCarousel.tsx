@@ -1,9 +1,8 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { data } from "../data";
+import data from "../data/carouselData";
 
 import "../styles/Carousel/Carousel.css";
-import { reverse } from "dns";
 
 function AutoCarousel() {
   const [windowWidth, setWindowWidth] = React.useState(window.innerWidth); // Store the window width
@@ -67,7 +66,6 @@ function createTranslateArray(size: number) {
   let result = [];
 
   for (let i = 0; i < length + 1; i++) {
-    // Loop through each item in carousel
     for (let j = 0; j < 2; j++) {
       result.push(`translate(-${size * i}px)`);
     }

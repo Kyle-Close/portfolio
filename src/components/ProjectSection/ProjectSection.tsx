@@ -1,14 +1,18 @@
 import { Box, Typography } from "@mui/material";
 import Projects from "./Projects";
 
-function ProjectSection() {
+interface ProjectSectionProps {
+  darkMode: boolean;
+}
+
+function ProjectSection({ darkMode }: ProjectSectionProps) {
   return (
     <Box sx={projectSection}>
       <Typography sx={projectHeading} variant="h3">
         Projects
       </Typography>
       <Box sx={projectContainer}>
-        <Projects />
+        <Projects darkMode={darkMode} />
       </Box>
     </Box>
   );
