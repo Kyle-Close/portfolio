@@ -7,7 +7,7 @@ import AboutBody from "./AboutBody";
 function AboutSection() {
   return (
     <Box sx={aboutContainer} id="about">
-      <Typography variant="h5">About</Typography>
+      <Typography variant="h3">About</Typography>
 
       <AboutBody />
 

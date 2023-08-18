@@ -4,7 +4,7 @@ import Projects from "./Projects";
 function ProjectSection() {
   return (
     <Box sx={projectSection}>
-      <Typography sx={projectHeading} variant="h3" component="h3">
+      <Typography sx={projectHeading} variant="h3">
         Projects
       </Typography>
       <Box sx={projectContainer}>

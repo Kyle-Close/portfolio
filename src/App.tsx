@@ -44,7 +44,7 @@ function App() {
             },
           },
           {
-            props: { variant: "h5" },
+            props: { variant: "h3" },
             style: {
               fontFamily: "Roboto Slab",
               fontSize: "1.2rem",
@@ -56,6 +56,22 @@ function App() {
               [baseTheme.breakpoints.up("md")]: {
                 fontSize: "1.6rem",
                 margin: "18px 0",
+              },
+            },
+          },
+          {
+            props: { variant: "h5" },
+            style: {
+              fontFamily: "Roboto Slab",
+              fontSize: "1.1rem",
+              margin: "12px 0",
+              [baseTheme.breakpoints.up("sm")]: {
+                fontSize: "1.2rem",
+                margin: "13px 0",
+              },
+              [baseTheme.breakpoints.up("md")]: {
+                fontSize: "1.4rem",
+                margin: "15px 0",
               },
             },
           },

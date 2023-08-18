@@ -2,18 +2,25 @@ import { Box, Typography } from "@mui/material";
 
 function ProjectText() {
   return (
-    <Box sx={{ fontSize: "1.19rem", fontWeight: "400" }}>
-      <Typography
-        color="secondary"
-        sx={projectTitle}
-        variant="h5"
-        component="h5"
-      >
+    <Box>
+      <Typography style={{ margin: "0" }} color="secondary" variant="h5">
         Snake
       </Typography>
       <Typography variant="body1" sx={technologiesTitle}>
         Technologies:{" "}
-        <Box color={"white"} component="span">
+        <Box
+          color={"white"}
+          component="span"
+          sx={{
+            fontFamily: "Montserrat",
+            fontWeight: "400",
+            fontSize: {
+              xs: "0.85rem",
+              sm: "0.95rem",
+              md: "1.1rem",
+            },
+          }}
+        >
           React, Redux, Tailwind
         </Box>
       </Typography>
@@ -27,14 +34,10 @@ function ProjectText() {
   );
 }
 
-const projectTitle = {
-  fontSize: "1.1rem",
-  fontWeight: "600",
-};
-
 const technologiesTitle = {
   color: "#599cff",
   fontWeight: "500",
+  fontFamily: "Roboto Slab",
 };
 
 export default ProjectText;
