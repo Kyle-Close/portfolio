@@ -3,10 +3,18 @@ import imgSrc from "../../img/project-img.png";
 
 function ProjectImg() {
   return (
-    <Box sx={{ flexGrow: "1" }}>
-      <img src={imgSrc} />
+    <Box>
+      <Box component="img" src={imgSrc} alt="Description" sx={img} />
     </Box>
   );
 }
+
+const img = {
+  width: {
+    xs: "200px",
+    sm: "220px",
+    md: "240px",
+  },
+};
 
 export default ProjectImg;

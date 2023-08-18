@@ -2,7 +2,7 @@ import { Box, Typography } from "@mui/material";
 
 function ProjectText() {
   return (
-    <Box>
+    <Box sx={{ fontSize: "1.19rem", fontWeight: "400" }}>
       <Typography
         color="secondary"
         sx={projectTitle}
@@ -13,11 +13,11 @@ function ProjectText() {
       </Typography>
       <Typography sx={technologiesTitle}>
         Technologies:{" "}
-        <Box color={"white"} sx={{ fontWeight: "400" }} component="span">
+        <Box color={"white"} component="span">
           React, Redux, Tailwind
         </Box>
       </Typography>
-      <Typography sx={{ marginTop: "5px", fontSize: "0.9rem" }}>
+      <Typography sx={{ marginTop: "5px" }}>
         Clone of the classic snake game. Select from the varying difficulties.
         Lorem ipsum dolor, sit amet consectetur adipisicing elit. Blanditiis
         saepe mollitia ipsam possimus aliquid? Totam saepe velit, sapiente esse
