@@ -3,7 +3,7 @@ import React from "react";
 import Header from "./components/Header/Header";
 import TitleSection from "./components/TitleSection";
 import AboutSection from "./components/AboutSection";
-import ProjectSection from "./components/ProjectSection";
+import ProjectSection from "./components/ProjectSection/ProjectSection";
 
 import CssBaseline from "@mui/material/CssBaseline";
 import { createTheme, ThemeProvider, styled } from "@mui/material/styles";
