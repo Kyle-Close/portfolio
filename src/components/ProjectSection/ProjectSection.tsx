@@ -1,5 +1,6 @@
 import { Box, Typography } from "@mui/material";
 import Projects from "./Projects";
+import { lineSeparator } from "../TitleSection";
 
 interface ProjectSectionProps {
   darkMode: boolean;
@@ -7,13 +8,14 @@ interface ProjectSectionProps {
 
 function ProjectSection({ darkMode }: ProjectSectionProps) {
   return (
-    <Box sx={projectSection}>
+    <Box id="projects" sx={projectSection}>
       <Typography sx={projectHeading} variant="h3">
         Projects
       </Typography>
       <Box sx={projectContainer}>
         <Projects darkMode={darkMode} />
       </Box>
+      <Box sx={lineSeparator}></Box>
     </Box>
   );
 }
@@ -35,7 +37,7 @@ const projectHeading = {
 const projectContainer = {
   display: "flex",
   flexWrap: "wrap",
-  gap: "15px",
+  gap: "30px",
 };
 
 export default ProjectSection;

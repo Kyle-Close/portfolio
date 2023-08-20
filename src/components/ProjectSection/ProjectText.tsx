@@ -11,6 +11,7 @@ function ProjectText({ title, technologies, description }: ProjectTextProps) {
   technologies.forEach((technology) => {
     techString += technology + ", ";
   });
+  techString = techString.slice(0, -2); // Remove trailing ", "
   return (
     <Box>
       <Typography style={{ margin: "0" }} color="secondary" variant="h5">
