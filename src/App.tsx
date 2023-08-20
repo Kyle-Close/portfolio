@@ -7,6 +7,7 @@ import ProjectSection from "./components/ProjectSection/ProjectSection";
 
 import CssBaseline from "@mui/material/CssBaseline";
 import { createTheme, ThemeProvider, styled } from "@mui/material/styles";
+import ContactSection from "./components/ContactSection/ContactSection";
 
 function App() {
   const [darkMode, setDarkMode] = React.useState(true);
@@ -123,6 +124,7 @@ function App() {
           <TitleSection darkMode={darkMode} />
           <AboutSection />
           <ProjectSection darkMode={darkMode} />
+          <ContactSection />
         </div>
       </StyledApp>
     </ThemeProvider>
