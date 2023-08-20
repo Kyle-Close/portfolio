@@ -111,10 +111,6 @@ function App() {
     setDarkMode((prevDarkMode) => !prevDarkMode);
   };
 
-  React.useEffect(() => {
-    console.log("darkMode: ", darkMode);
-  }, [darkMode]);
-
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />

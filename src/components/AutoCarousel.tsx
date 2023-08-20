@@ -20,10 +20,6 @@ function AutoCarousel() {
     };
   }, []);
 
-  React.useEffect(() => {
-    console.log(typeof windowWidth);
-  }, [windowWidth]);
-
   function getCarouselItems(screenSize: number) {
     const translateArr = createTranslateArray(screenSize <= 650 ? 85 : 110);
     const carouselItems = data.map((item, index) => {

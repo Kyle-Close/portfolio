@@ -31,7 +31,6 @@ function ThemeToggler({ handleThemeToggle, darkMode }: HeaderProps) {
         control={
           <MaterialUISwitch
             sx={{ m: 1 }}
-            defaultChecked
             onChange={handleToggle}
             checked={isDarkMode}
           />

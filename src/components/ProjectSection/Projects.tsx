@@ -11,9 +11,9 @@ interface ProjectsProps {
 }
 
 function Projects({ darkMode }: ProjectsProps) {
-  const projects = ProjectData.map((data) => {
+  const projects = ProjectData.map((data, key) => {
     return (
-      <>
+      <Box sx={container} key={key}>
         <Box sx={textAndButtonsContainer}>
           <ProjectText
             title={data.name}
@@ -26,12 +26,19 @@ function Projects({ darkMode }: ProjectsProps) {
         <Box sx={imgContainer}>
           <ProjectImg src={darkMode ? data.imgDark : data.imgLight} />
         </Box>
-      </>
+      </Box>
     );
   });
 
   return <>{projects}</>;
 }
+
+const container = {
+  display: "flex",
+  flexGrow: "1",
+  flexWrap: "wrap",
+  gap: "15px",
+};
 
 const textAndButtonsContainer = {
   flexGrow: "1",

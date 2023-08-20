@@ -1,14 +1,29 @@
 import ContactTitleSection from "./ContactTitleSection";
-import { Box, Typography, TextField } from "@mui/material";
+import { Box, Typography, TextField, Button } from "@mui/material";
 
 function ContactSection() {
+  function handleSubmit(event: any) {
+    event.preventDefault();
+    console.log("Submitting...");
+  }
+
+  function onFormChange(e: any) {
+    console.log(e);
+  }
+
   return (
     <Box>
       <ContactTitleSection />
       <Typography variant="body1">
         Get in touch! Whether it's an opportunity or just to chat.
       </Typography>
-      <Box component="form" sx={form} noValidate>
+      <Box
+        component="form"
+        sx={form}
+        noValidate
+        onChange={onFormChange}
+        onSubmit={handleSubmit}
+      >
         <TextField
           sx={nameEmail}
           id="name"
@@ -19,9 +34,11 @@ function ContactSection() {
         <TextField
           sx={nameEmail}
           id="your-email"
+          type="email"
           label="Your Email"
           variant="outlined"
           size="small"
+          required
         />
         <TextField
           size="small"
@@ -32,6 +49,7 @@ function ContactSection() {
           variant="filled"
         />
       </Box>
+      <Button type="submit">Submit</Button>
     </Box>
   );
 }
