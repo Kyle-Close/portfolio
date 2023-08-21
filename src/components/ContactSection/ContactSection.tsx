@@ -1,15 +1,35 @@
 import ContactTitleSection from "./ContactTitleSection";
 import { Box, Typography, TextField, Button } from "@mui/material";
+import React from "react";
+
+const initFormData = {
+  name: "",
+  yourEmail: "",
+  message: "",
+};
 
 function ContactSection() {
+  const [formData, setFormData] = React.useState(initFormData);
+
   function handleSubmit(event: any) {
     event.preventDefault();
     console.log("Submitting...");
   }
 
-  function onFormChange(e: any) {
-    console.log(e);
+  function onFormChange(event: any) {
+    const name = event.target.id;
+    const id = event.target.value;
+    setFormData((prevFormData) => {
+      return {
+        ...prevFormData,
+        [name]: id,
+      };
+    });
   }
+
+  React.useEffect(() => {
+    console.log(formData);
+  }, [formData]);
 
   return (
     <Box>
@@ -33,7 +53,7 @@ function ContactSection() {
         />
         <TextField
           sx={nameEmail}
-          id="your-email"
+          id="yourEmail"
           type="email"
           label="Your Email"
           variant="outlined"
