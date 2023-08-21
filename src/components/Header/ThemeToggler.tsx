@@ -11,7 +11,6 @@ interface HeaderProps {
 }
 
 function ThemeToggler({ handleThemeToggle, darkMode }: HeaderProps) {
-  const theme = useTheme();
   const [isDarkMode, setIsDarkMode] = React.useState(darkMode);
 
   const handleToggle = () => {
@@ -48,6 +47,7 @@ const MaterialUISwitch = styled(Switch)(({ theme }) => ({
   width: 62,
   height: 34,
   padding: 7,
+
   "& .MuiSwitch-switchBase": {
     margin: 1,
     padding: 0,

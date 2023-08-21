@@ -9,6 +9,7 @@ function Footer() {
           sm: "14px",
           md: "15px",
         },
+        textAlign: "center",
       }}
       variant="body1"
     >

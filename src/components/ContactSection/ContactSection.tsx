@@ -93,7 +93,7 @@ function ContactSection() {
   const messageError = isValidInputs.message ? null : "Cannot be blank";
 
   return (
-    <Box>
+    <Box id="contact">
       <ContactTitleSection />
       <Typography variant="body1">
         Get in touch! Whether it's an opportunity or just to chat.
