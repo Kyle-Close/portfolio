@@ -22,9 +22,9 @@ const ProjectData = [
     name: "Snake",
     techStack: ["React", "Redux", "Tailwind"],
     description:
-      "Re-creation of the clasic game, Snake. Select between 3 difficulties.",
-    source: "https://github.com/Kyle-Close/Knights-Travails",
-    live: "https://kyle-close.github.io/Knights-Travails/",
+      "Re-creation of the clasic game snake. Select between 3 difficulties.",
+    source: "https://github.com/Kyle-Close/snake",
+    live: "https://kyle-close.github.io/snake/",
     imgDark: snakeDark,
     imgLight: snakeLight,
   },
