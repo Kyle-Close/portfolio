@@ -13,12 +13,14 @@
     "@types/react-dom": "^18.2.7",
     "embla-carousel-react": "^8.0.0-rc11",
     "framer-motion": "^10.15.0",
+    "mongodb": "^6.5.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-id-swiper": "^4.0.0",
     "react-responsive-carousel": "^3.2.23",
     "react-scripts": "5.0.1",
     "typescript": "^4.9.5",
+    "util": "^0.12.5",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
