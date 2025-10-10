@@ -31,7 +31,7 @@ function TitleSection({ darkMode }: TitleSectionProps) {
             component="h2"
             className="web-developer"
           >
-            WEB DEVELOPER
+            SOFTWARE DEVELOPER
           </Typography>
         </Box>
       </Box>

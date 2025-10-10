@@ -9,11 +9,9 @@ import Footer from './components/Footer';
 import CssBaseline from '@mui/material/CssBaseline';
 import { createTheme, ThemeProvider, styled } from '@mui/material/styles';
 import ContactSection from './components/ContactSection/ContactSection';
-import { run } from './settings/mongoDB';
 
 function App() {
   const [darkMode, setDarkMode] = React.useState(true);
-  run().catch(console.dir);
 
   const baseTheme = createTheme({
     typography: {
