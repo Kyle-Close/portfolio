@@ -2,7 +2,6 @@ import * as React from "react";
 import { styled } from "@mui/material/styles";
 import FormGroup from "@mui/material/FormGroup";
 import Switch from "@mui/material/Switch";
-import { useTheme } from "@mui/material/styles";
 import { FormControlLabel } from "@mui/material";
 
 interface HeaderProps {

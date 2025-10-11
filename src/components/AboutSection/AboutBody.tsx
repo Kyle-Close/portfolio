@@ -5,22 +5,15 @@ function AboutBody() {
   return (
     <>
       <Typography variant="body1" style={{ margin: "0" }}>
-        Hello, my name is Kyle. I’m a computer engineering graduate currently
-        working as a software developer in Canada. Although my professional work
-        involves a broader range of software development, I've always been
-        particularly interested in web development.
+        Hello! I’m Kyle, a computer engineering graduate and software developer based in Canada with over three years of experience building software using .NET and SQL.
       </Typography>
       <Typography variant="body1">
-        After graduating, I was eager to deepen my knowledge about the web.
-        That's when I discovered{" "}
-        <Link href="https://www.theodinproject.com">The Odin Project,</Link> an
-        open-source, self-guided course that resonated with my desire for a
-        comprehensive, project-based learning experience.
+        I’m passionate about creating well-designed, reliable systems. Whether that means developing backend APIs, automating workflows, or building intuitive front-end experiences.
+        I enjoy understanding how things work from the ground up and continually exploring new technologies that sharpen my craft.
       </Typography>
       <Typography variant="body1">
-        The Odin Project has guided me in my self-learning journey. In the next
-        section you can find projects that I’ve built throughout the course, as
-        well as personal passion projects.
+        My work spans everything from backend API development to frontend applications, with a growing focus on software architecture, automation, and system design.
+        Below, you can find a collection of projects that reflect my curiosity, problem-solving mindset, and commitment to continual learning.
       </Typography>
     </>
   );

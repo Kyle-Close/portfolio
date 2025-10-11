@@ -1,13 +1,23 @@
-import knightsDark from '../img/knights-dark.png';
-import knightsLight from '../img/knights-light.png';
+import chessDark from '../img/chess-dark.png'
+import chessLight from '../img/chess-laptop-light.png'
 
-import bitelogDark from '../img/laptop-bitelog-dark.png';
-import bitelogLight from '../img/laptop-bitelog-light.png';
+import bitelogDark from '../img/bitelog-laptop-dark.png'
+import bitelogLight from '../img/bitelog-laptop-light.png';
 
-import blogDark from '../img/laptop-blog-dark.png';
-import blogLight from '../img/laptop-blog-light.png';
+import blogDark from '../img/blog-laptop-dark.png';
+import blogLight from '../img/blog-laptop-light.png';
 
 const ProjectData = [
+  {
+    name: 'Chess',
+    techStack: ['.NET', 'React', 'Typescript'],
+    description:
+      'A full-stack chess application built with .NET and React, featuring real-time move validation, game state tracking, and Stockfish integration for AI-powered analysis.',
+    source: 'https://github.com/Kyle-Close/Knights-Travails',
+    live: 'https://kyle-close.github.io/chess/',
+    imgDark: chessDark,
+    imgLight: chessLight,
+  },
   {
     name: 'Bitelog',
     techStack: ['React', 'Express', 'Postgres', 'Jest'],
@@ -27,16 +37,6 @@ const ProjectData = [
     live: 'https://blog-gold-seven-38.vercel.app/',
     imgDark: blogDark,
     imgLight: blogLight,
-  },
-  {
-    name: 'Knights-Travails',
-    techStack: ['Javascript', 'HTML', 'CSS'],
-    description:
-      'Shortest path visualizer of a knight in the classic board game, chess.',
-    source: 'https://github.com/Kyle-Close/Knights-Travails',
-    live: 'https://kyle-close.github.io/Knights-Travails/',
-    imgDark: knightsDark,
-    imgLight: knightsLight,
   },
 ];
 
