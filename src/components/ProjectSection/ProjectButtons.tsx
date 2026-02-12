@@ -15,6 +15,7 @@ function ProjectButtons({ live, source }: ProjectButtonsProps) {
         sx={liveButton}
         variant="outlined"
         target="_blank"
+        rel="noopener noreferrer"
       >
         Live
       </Button>
@@ -23,6 +24,7 @@ function ProjectButtons({ live, source }: ProjectButtonsProps) {
         sx={sourceButton}
         variant="outlined"
         target="_blank"
+        rel="noopener noreferrer"
       >
         Source
       </Button>

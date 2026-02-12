@@ -10,16 +10,18 @@ function ContactTitleSection() {
       <ButtonBase
         href="https://www.linkedin.com/in/kyle-close/"
         target="_blank"
+        rel="noopener noreferrer"
         sx={linkedinButton}
       >
-        <img src={linkedIn} style={{ width: "100%" }} />
+        <img src={linkedIn} alt="LinkedIn" style={{ width: "100%" }} />
       </ButtonBase>
       <ButtonBase
         href="https://github.com/Kyle-Close"
         target="_blank"
+        rel="noopener noreferrer"
         sx={githubButton}
       >
-        <img src={gitHub} style={{ width: "100%" }} />
+        <img src={gitHub} alt="GitHub" style={{ width: "100%" }} />
       </ButtonBase>
     </Box>
   );

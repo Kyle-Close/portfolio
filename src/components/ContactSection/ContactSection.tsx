@@ -1,6 +1,8 @@
 import ContactTitleSection from "./ContactTitleSection";
-import { Box, Typography, TextField, Button } from "@mui/material";
+import { Box, Typography, TextField, Button, CircularProgress, Alert } from "@mui/material";
 import React from "react";
+
+const FORMSPREE_URL = "https://formspree.io/f/YOUR_FORM_ID";
 
 const initFormData = {
   name: "",
@@ -14,14 +16,37 @@ const initValidInputs = {
   message: true,
 };
 
+type SubmitStatus = "idle" | "submitting" | "submitted" | "error";
+
 function ContactSection() {
   const [formData, setFormData] = React.useState(initFormData);
   const [isValidInputs, setIsValidInputs] = React.useState(initValidInputs);
+  const [submitStatus, setSubmitStatus] = React.useState<SubmitStatus>("idle");
 
-  function handleSubmit(event: any) {
+  async function handleSubmit(event: React.FormEvent) {
     event.preventDefault();
-    if (validateForm()) {
-      console.log("Form is valid");
+    if (!validateForm()) return;
+
+    setSubmitStatus("submitting");
+    try {
+      const res = await fetch(FORMSPREE_URL, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.yourEmail,
+          message: formData.message,
+        }),
+      });
+
+      if (res.ok) {
+        setSubmitStatus("submitted");
+        setFormData(initFormData);
+      } else {
+        setSubmitStatus("error");
+      }
+    } catch {
+      setSubmitStatus("error");
     }
   }
 
@@ -75,7 +100,7 @@ function ContactSection() {
     return isValidLength;
   }
 
-  function onFormChange(event: any) {
+  function onFormChange(event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) {
     const name = event.target.id;
     const id = event.target.value;
     setFormData((prevFormData) => {
@@ -84,6 +109,7 @@ function ContactSection() {
         [name]: id,
       };
     });
+    if (submitStatus === "error") setSubmitStatus("idle");
   }
 
   const nameError = isValidInputs.name
@@ -92,12 +118,28 @@ function ContactSection() {
   const emailError = isValidInputs.yourEmail ? null : "Must be a valid email";
   const messageError = isValidInputs.message ? null : "Cannot be blank";
 
+  if (submitStatus === "submitted") {
+    return (
+      <Box id="contact">
+        <ContactTitleSection />
+        <Alert severity="success" sx={{ mt: 2 }}>
+          Thanks for reaching out! I'll get back to you soon.
+        </Alert>
+      </Box>
+    );
+  }
+
   return (
     <Box id="contact">
       <ContactTitleSection />
       <Typography variant="body1">
         Get in touch! Whether it's an opportunity or just to chat.
       </Typography>
+      {submitStatus === "error" && (
+        <Alert severity="error" sx={{ mt: 1 }}>
+          Something went wrong. Please try again.
+        </Alert>
+      )}
       <Box
         component="form"
         sx={form}
@@ -112,6 +154,8 @@ function ContactSection() {
           variant="outlined"
           size="small"
           required
+          value={formData.name}
+          disabled={submitStatus === "submitting"}
           {...(nameError ? { error: true, helperText: nameError } : {})}
         />
         <TextField
@@ -122,6 +166,8 @@ function ContactSection() {
           variant="outlined"
           size="small"
           required
+          value={formData.yourEmail}
+          disabled={submitStatus === "submitting"}
           {...(emailError ? { error: true, helperText: emailError } : {})}
         />
         <TextField
@@ -132,10 +178,17 @@ function ContactSection() {
           rows={6}
           variant="outlined"
           required
+          value={formData.message}
+          disabled={submitStatus === "submitting"}
           {...(messageError ? { error: true, helperText: messageError } : {})}
         />
-        <Button type="submit" variant="contained">
-          Submit
+        <Button
+          type="submit"
+          variant="contained"
+          disabled={submitStatus === "submitting"}
+          startIcon={submitStatus === "submitting" ? <CircularProgress size={20} color="inherit" /> : null}
+        >
+          {submitStatus === "submitting" ? "Sending..." : "Submit"}
         </Button>
       </Box>
     </Box>

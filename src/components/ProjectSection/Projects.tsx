@@ -24,7 +24,7 @@ function Projects({ darkMode }: ProjectsProps) {
         </Box>
 
         <Box sx={imgContainer}>
-          <ProjectImg src={darkMode ? data.imgDark : data.imgLight} />
+          <ProjectImg src={darkMode ? data.imgDark : data.imgLight} name={data.name} />
         </Box>
       </Box>
     );

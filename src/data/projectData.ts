@@ -1,13 +1,26 @@
-import chessDark from '../img/chess-dark.png'
-import chessLight from '../img/chess-laptop-light.png'
+import progressionDark from '../img/progression-laptop-dark.webp';
+import progressionLight from '../img/progression-laptop-light.webp';
 
-import bitelogDark from '../img/bitelog-laptop-dark.png'
-import bitelogLight from '../img/bitelog-laptop-light.png';
+import chessDark from '../img/chess-dark.webp'
+import chessLight from '../img/chess-laptop-light.webp'
 
-import blogDark from '../img/blog-laptop-dark.png';
-import blogLight from '../img/blog-laptop-light.png';
+import bitelogDark from '../img/bitelog-laptop-dark.webp'
+import bitelogLight from '../img/bitelog-laptop-light.webp';
+
+import blogDark from '../img/blog-laptop-dark.webp';
+import blogLight from '../img/blog-laptop-light.webp';
 
 const ProjectData = [
+  {
+    name: 'Progression',
+    techStack: ['React', 'FastAPI', 'SQLite', 'TypeScript'],
+    description:
+      'A full-stack workout tracker for structured strength training. Automatically calculates working weights from one rep max percentages, tracks progressive overload across weekly cycles, and includes a built-in Stronger by Science linear progression template. Features plate breakdowns, exercise history, and body weight tracking.',
+    source: 'https://github.com/Kyle-Close/workout',
+    live: 'https://kyle-close.github.io/workout-client/',
+    imgDark: progressionDark,
+    imgLight: progressionLight,
+  },
   {
     name: 'Chess',
     techStack: ['.NET', 'React', 'Typescript'],

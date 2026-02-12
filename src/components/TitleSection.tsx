@@ -22,7 +22,7 @@ function TitleSection({ darkMode }: TitleSectionProps) {
 
         <Box sx={webDevContainer}>
           <div className="web-img-container">
-            <img src={darkMode ? WebImgDark : WebImgLight} alt="" />
+            <img src={darkMode ? WebImgDark : WebImgLight} alt="Software development icon" />
           </div>
 
           <Typography
