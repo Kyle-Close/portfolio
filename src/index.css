@@ -1,12 +1,55 @@
-@import url("https://fonts.googleapis.com/css2?family=Anton&family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Roboto+Slab:wght@500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600&family=Roboto+Slab:wght@500&display=swap");
 
 :root {
   scroll-behavior: smooth;
+
+  /* Background */
+  --bg-gradient: linear-gradient(135deg, #0a0e1a 0%, #111633 40%, #0d1a2d 70%, #0a0e1a 100%);
+
+  /* Glass surfaces */
+  --glass-bg: rgba(255, 255, 255, 0.05);
+  --glass-bg-hover: rgba(255, 255, 255, 0.08);
+  --glass-border: rgba(255, 255, 255, 0.1);
+  --glass-border-hover: rgba(255, 255, 255, 0.18);
+  --glass-blur: 12px;
+  --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  --glass-shadow-hover: 0 12px 40px rgba(0, 0, 0, 0.4);
+  --glass-radius: 16px;
+  --glass-transition: all 0.3s ease;
+
+  /* Accent */
+  --accent: #599cff;
+  --accent-glow: 0 0 8px rgba(89, 156, 255, 0.4);
+  --accent-glow-strong: 0 0 16px rgba(89, 156, 255, 0.6);
+
+  /* Background orbs */
+  --orb-1: rgba(89, 156, 255, 0.15);
+  --orb-2: rgba(124, 107, 255, 0.12);
+  --orb-3: rgba(59, 200, 200, 0.1);
+}
+
+[data-theme="light"] {
+  --bg-gradient: linear-gradient(135deg, #e8edf5 0%, #dde4f0 40%, #e0e8f4 70%, #edf1f7 100%);
+
+  --glass-bg: rgba(255, 255, 255, 0.55);
+  --glass-bg-hover: rgba(255, 255, 255, 0.7);
+  --glass-border: rgba(255, 255, 255, 0.6);
+  --glass-border-hover: rgba(255, 255, 255, 0.8);
+  --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+  --glass-shadow-hover: 0 12px 40px rgba(0, 0, 0, 0.12);
+
+  --accent: #3b7ddb;
+  --accent-glow: 0 0 8px rgba(59, 125, 219, 0.3);
+  --accent-glow-strong: 0 0 16px rgba(59, 125, 219, 0.5);
+
+  --orb-1: rgba(89, 156, 255, 0.2);
+  --orb-2: rgba(124, 107, 255, 0.15);
+  --orb-3: rgba(59, 200, 200, 0.12);
 }
 
 html,
 body {
-  font-family: "Montserrat", sans-serif;
+  font-family: "Inter", sans-serif;
 }
 
 body {
@@ -24,4 +67,32 @@ body {
 
 .MuiSwitch-root {
   margin: 0;
+}
+
+/* Glass card utility */
+.glass-card {
+  background: var(--glass-bg);
+  backdrop-filter: blur(var(--glass-blur));
+  -webkit-backdrop-filter: blur(var(--glass-blur));
+  border: 1px solid var(--glass-border);
+  border-radius: var(--glass-radius);
+  box-shadow: var(--glass-shadow);
+  transition: var(--glass-transition);
+}
+
+.glass-card:hover {
+  background: var(--glass-bg-hover);
+  border-color: var(--glass-border-hover);
+  box-shadow: var(--glass-shadow-hover);
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }

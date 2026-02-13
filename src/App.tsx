@@ -9,18 +9,23 @@ import Footer from './components/Footer';
 import CssBaseline from '@mui/material/CssBaseline';
 import { createTheme, ThemeProvider, styled } from '@mui/material/styles';
 import ContactSection from './components/ContactSection/ContactSection';
+import { motion } from 'framer-motion';
 
 function App() {
   const [darkMode, setDarkMode] = React.useState(true);
 
+  React.useEffect(() => {
+    document.documentElement.setAttribute('data-theme', darkMode ? 'dark' : 'light');
+  }, [darkMode]);
+
   const baseTheme = createTheme({
     typography: {
-      fontFamily: 'Montserrat, Arial, sans-serif',
+      fontFamily: 'Inter, Arial, sans-serif',
     },
     palette: {
       mode: darkMode ? 'dark' : 'light',
       background: {
-        default: darkMode ? 'hsl(230, 17%, 14%)' : 'hsl(0, 0%, 100%)',
+        default: 'transparent',
       },
     },
     //... other theme properties
@@ -35,6 +40,8 @@ function App() {
             props: { variant: 'body1' },
             style: {
               fontSize: '0.95rem',
+              lineHeight: 1.7,
+              letterSpacing: '0.01em',
               margin: '5px 0',
               [baseTheme.breakpoints.up('sm')]: {
                 fontSize: '1.1rem',
@@ -98,24 +105,71 @@ function App() {
     },
   });
 
-  const StyledApp = styled('div')(({ theme }) => ({
+  const StyledApp = styled('div')({
     height: '100%',
     width: '100%',
-    backgroundColor: theme.palette.background.default,
+    background: 'var(--bg-gradient)',
+    minHeight: '100vh',
+    position: 'relative',
+    overflow: 'hidden',
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
     flex: 1,
-  }));
+  });
 
   const handleThemeToggle = () => {
     setDarkMode((prevDarkMode) => !prevDarkMode);
+  };
+
+  const orbStyles = {
+    position: 'fixed' as const,
+    borderRadius: '50%',
+    filter: 'blur(80px)',
+    zIndex: 0,
+    pointerEvents: 'none' as const,
   };
 
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
       <StyledApp>
+        <motion.div
+          style={{
+            ...orbStyles,
+            width: '400px',
+            height: '400px',
+            background: 'var(--orb-1)',
+            top: '10%',
+            left: '-5%',
+          }}
+          animate={{ x: [0, 30, -20, 0], y: [0, -25, 15, 0] }}
+          transition={{ duration: 20, repeat: Infinity, ease: 'easeInOut' }}
+        />
+        <motion.div
+          style={{
+            ...orbStyles,
+            width: '350px',
+            height: '350px',
+            background: 'var(--orb-2)',
+            top: '50%',
+            right: '-8%',
+          }}
+          animate={{ x: [0, -25, 20, 0], y: [0, 20, -30, 0] }}
+          transition={{ duration: 25, repeat: Infinity, ease: 'easeInOut' }}
+        />
+        <motion.div
+          style={{
+            ...orbStyles,
+            width: '300px',
+            height: '300px',
+            background: 'var(--orb-3)',
+            bottom: '10%',
+            left: '30%',
+          }}
+          animate={{ x: [0, 20, -15, 0], y: [0, -20, 25, 0] }}
+          transition={{ duration: 22, repeat: Infinity, ease: 'easeInOut' }}
+        />
         <div className='app-wrapper'>
           <Header handleThemeToggle={handleThemeToggle} darkMode={darkMode} />
           <TitleSection darkMode={darkMode} />

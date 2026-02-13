@@ -38,17 +38,31 @@ const buttonContainer = {
   gap: "15px",
 };
 
-const liveButton = {
+const glassButtonBase = {
   borderRadius: "25px",
+  background: "var(--glass-bg)",
+  backdropFilter: "blur(8px)",
+  WebkitBackdropFilter: "blur(8px)",
+  border: "1px solid var(--glass-border)",
+  transition: "var(--glass-transition)",
+  "&:hover": {
+    borderColor: "var(--accent)",
+    boxShadow: "var(--accent-glow)",
+    background: "var(--glass-bg-hover)",
+  },
+};
+
+const liveButton = {
+  ...glassButtonBase,
   width: "33%",
   maxWidth: "150px",
 };
 
 const sourceButton = {
-  borderRadius: "25px",
+  ...glassButtonBase,
   width: "50%",
   maxWidth: "300px",
-  color: "#599cff",
+  color: "var(--accent)",
 };
 
 export default ProjectButtons;

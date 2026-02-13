@@ -15,6 +15,7 @@
   animation-duration: 5s, 2s;
   animation-iteration-count: infinite, 1;
   animation-timing-function: linear;
+  filter: drop-shadow(0 0 6px rgba(89, 156, 255, 0.4));
 }
 
 .web-img-container > img {

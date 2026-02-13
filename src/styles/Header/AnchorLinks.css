@@ -1,23 +1,42 @@
 .anchor-links-container {
   display: flex;
-  gap: 8%;
-  font-weight: bold;
+  gap: 4px;
+  font-weight: 600;
   font-size: 11px;
   flex-grow: 1;
 }
 
 .anchor-links-container > a {
   text-decoration: none;
+  padding: 6px 10px;
+  border-radius: 8px;
+  transition: background 0.25s ease, text-shadow 0.25s ease;
+}
+
+.anchor-links-container > a:hover {
+  background: var(--glass-bg-hover);
+  text-shadow: var(--accent-glow);
 }
 
 @media screen and (min-width: 380px) {
   .anchor-links-container {
     font-size: 14px;
+    gap: 6px;
+  }
+
+  .anchor-links-container > a {
+    padding: 6px 12px;
   }
 }
 
 @media screen and (min-width: 650px) {
   .anchor-links-container {
-    font-size: 18px;
+    font-size: 16px;
+    gap: 8px;
+  }
+
+  .anchor-links-container > a {
+    padding: 8px 16px;
+    border-radius: 10px;
   }
 }

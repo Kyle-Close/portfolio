@@ -11,7 +11,7 @@ interface TitleSectionProps {
 
 function TitleSection({ darkMode }: TitleSectionProps) {
   return (
-    <Box sx={titleContainer}>
+    <Box sx={heroSection}>
       <Typography sx={intro} variant="h6" component="h6">
         Hi, my name is
       </Typography>
@@ -40,13 +40,28 @@ function TitleSection({ darkMode }: TitleSectionProps) {
   );
 }
 
-const intro = {
+const heroSection = {
+  display: "flex",
+  flexWrap: "wrap",
+  justifyContent: "space-between",
   marginTop: {
-    xs: "15px",
-    sm: "20px",
-    md: "30px",
+    xs: "24px",
+    sm: "32px",
+    md: "48px",
   },
-  color: "#599cff",
+  marginBottom: {
+    xs: "16px",
+    sm: "20px",
+    md: "28px",
+  },
+  padding: {
+    xs: "0 4px",
+    sm: "0 8px",
+  },
+};
+
+const intro = {
+  color: "var(--accent)",
   marginBottom: "0",
   width: "100%",
   fontSize: {
@@ -65,14 +80,8 @@ const nameAndWebDev = {
   flexWrap: "wrap",
 };
 
-const titleContainer = {
-  display: "flex",
-  flexWrap: "wrap",
-  justifyContent: "space-between",
-};
-
 const name = {
-  display: "inline-block", // Explicitly setting display to inline-block
+  display: "inline-block",
   alignItems: "center",
   fontWeight: "600",
   fontSize: {
@@ -91,7 +100,7 @@ const webDevContainer = {
 
 const webDev = {
   opacity: "0.9",
-  display: "inline-block", // Explicitly setting display to inline-block
+  display: "inline-block",
   alignItems: "center",
   fontWeight: "500",
   fontSize: {
@@ -104,9 +113,9 @@ const webDev = {
 
 export const lineSeparator = {
   width: "100%",
-  backgroundColor: "gray",
   height: "1px",
   marginTop: "20px",
+  background: "linear-gradient(90deg, transparent, var(--glass-border), transparent)",
 };
 
 export default TitleSection;

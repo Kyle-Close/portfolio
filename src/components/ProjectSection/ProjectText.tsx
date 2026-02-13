@@ -14,16 +14,16 @@ function ProjectText({ title, technologies, description }: ProjectTextProps) {
   techString = techString.slice(0, -2); // Remove trailing ", "
   return (
     <Box>
-      <Typography style={{ margin: "0" }} color="secondary" variant="h5">
+      <Typography style={{ margin: "0", marginBottom: "8px" }} color="secondary" variant="h5">
         {title}
       </Typography>
       <Typography variant="body1" sx={technologiesTitle}>
         Technologies:{" "}
-        <Box color={"white"} component="span">
+        <Box component="span" sx={{ color: "text.primary" }}>
           {techString}
         </Box>
       </Typography>
-      <Typography variant="body1" sx={{ marginTop: "5px" }}>
+      <Typography variant="body1" sx={{ marginTop: "10px", opacity: 0.85 }}>
         {description}
       </Typography>
     </Box>
@@ -31,7 +31,7 @@ function ProjectText({ title, technologies, description }: ProjectTextProps) {
 }
 
 const technologiesTitle = {
-  color: "#599cff",
+  color: "var(--accent)",
   fontWeight: "500",
   fontFamily: "Roboto Slab",
 };

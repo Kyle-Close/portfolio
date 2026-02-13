@@ -1,6 +1,7 @@
 import { Box, Typography } from "@mui/material";
 import Projects from "./Projects";
 import { lineSeparator } from "../TitleSection";
+import { motion } from "framer-motion";
 
 interface ProjectSectionProps {
   darkMode: boolean;
@@ -8,15 +9,22 @@ interface ProjectSectionProps {
 
 function ProjectSection({ darkMode }: ProjectSectionProps) {
   return (
-    <Box id="projects" sx={projectSection}>
-      <Typography sx={projectHeading} variant="h3">
-        Projects
-      </Typography>
-      <Box sx={projectContainer}>
-        <Projects darkMode={darkMode} />
+    <motion.div
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-50px" }}
+      transition={{ duration: 0.6, ease: "easeOut" }}
+    >
+      <Box id="projects" sx={projectSection}>
+        <Typography sx={projectHeading} variant="h3">
+          Projects
+        </Typography>
+        <Box sx={projectContainer}>
+          <Projects darkMode={darkMode} />
+        </Box>
+        <Box sx={lineSeparator}></Box>
       </Box>
-      <Box sx={lineSeparator}></Box>
-    </Box>
+    </motion.div>
   );
 }
 

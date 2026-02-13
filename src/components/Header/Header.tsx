@@ -15,16 +15,22 @@ function Header({ handleThemeToggle, darkMode }: HeaderProps) {
     justifyContent: "space-between",
     alignItems: "center",
     gap: "10px",
-    height: "100%",
     position: "sticky",
     top: "0",
-    zIndex: "1",
-    backgroundColor: darkMode ? `hsl(230, 17%, 14%)` : "hsl(0, 0%, 100%)",
+    zIndex: 10,
+    background: "var(--glass-bg)",
+    backdropFilter: "blur(var(--glass-blur))",
+    WebkitBackdropFilter: "blur(var(--glass-blur))",
+    border: "1px solid var(--glass-border)",
+    boxShadow: "var(--glass-shadow)",
+    transition: "var(--glass-transition)",
     padding: {
-      xs: "5px 0",
-      sm: "5px 0",
-      md: "10px 0",
+      xs: "10px 16px",
+      sm: "10px 20px",
+      md: "12px 24px",
     },
+    borderRadius: "var(--glass-radius)",
+    marginTop: "8px",
   };
 
   return (

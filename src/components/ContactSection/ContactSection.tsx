@@ -1,8 +1,9 @@
 import ContactTitleSection from "./ContactTitleSection";
 import { Box, Typography, TextField, Button, CircularProgress, Alert } from "@mui/material";
 import React from "react";
+import { motion } from "framer-motion";
 
-const FORMSPREE_URL = "https://formspree.io/f/YOUR_FORM_ID";
+const FORMSPREE_URL = "https://formspree.io/f/xwvnlqwp";
 
 const initFormData = {
   name: "",
@@ -118,11 +119,35 @@ function ContactSection() {
   const emailError = isValidInputs.yourEmail ? null : "Must be a valid email";
   const messageError = isValidInputs.message ? null : "Cannot be blank";
 
+  const inputSx = {
+    "& .MuiOutlinedInput-root": {
+      background: "var(--glass-bg)",
+      backdropFilter: "blur(8px)",
+      WebkitBackdropFilter: "blur(8px)",
+      borderRadius: "12px",
+      transition: "var(--glass-transition)",
+      "& fieldset": {
+        borderColor: "var(--glass-border)",
+        transition: "border-color 0.25s ease",
+      },
+      "&:hover fieldset": {
+        borderColor: "var(--glass-border-hover)",
+      },
+      "&.Mui-focused fieldset": {
+        borderColor: "var(--accent)",
+        boxShadow: "var(--accent-glow)",
+      },
+    },
+    "& .MuiInputLabel-root.Mui-focused": {
+      color: "var(--accent)",
+    },
+  };
+
   if (submitStatus === "submitted") {
     return (
       <Box id="contact">
         <ContactTitleSection />
-        <Alert severity="success" sx={{ mt: 2 }}>
+        <Alert severity="success" sx={{ mt: 2, borderRadius: "12px" }}>
           Thanks for reaching out! I'll get back to you soon.
         </Alert>
       </Box>
@@ -130,83 +155,139 @@ function ContactSection() {
   }
 
   return (
-    <Box id="contact">
-      <ContactTitleSection />
-      <Typography variant="body1">
-        Get in touch! Whether it's an opportunity or just to chat.
-      </Typography>
-      {submitStatus === "error" && (
-        <Alert severity="error" sx={{ mt: 1 }}>
-          Something went wrong. Please try again.
-        </Alert>
-      )}
-      <Box
-        component="form"
-        sx={form}
-        noValidate
-        onChange={onFormChange}
-        onSubmit={handleSubmit}
-      >
-        <TextField
-          sx={nameEmail}
-          id="name"
-          label="Name"
-          variant="outlined"
-          size="small"
-          required
-          value={formData.name}
-          disabled={submitStatus === "submitting"}
-          {...(nameError ? { error: true, helperText: nameError } : {})}
-        />
-        <TextField
-          sx={nameEmail}
-          id="yourEmail"
-          type="email"
-          label="Your Email"
-          variant="outlined"
-          size="small"
-          required
-          value={formData.yourEmail}
-          disabled={submitStatus === "submitting"}
-          {...(emailError ? { error: true, helperText: emailError } : {})}
-        />
-        <TextField
-          size="small"
-          id="message"
-          label="Message"
-          multiline
-          rows={6}
-          variant="outlined"
-          required
-          value={formData.message}
-          disabled={submitStatus === "submitting"}
-          {...(messageError ? { error: true, helperText: messageError } : {})}
-        />
-        <Button
-          type="submit"
-          variant="contained"
-          disabled={submitStatus === "submitting"}
-          startIcon={submitStatus === "submitting" ? <CircularProgress size={20} color="inherit" /> : null}
-        >
-          {submitStatus === "submitting" ? "Sending..." : "Submit"}
-        </Button>
+    <motion.div
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-50px" }}
+      transition={{ duration: 0.6, ease: "easeOut" }}
+    >
+      <Box id="contact">
+        <ContactTitleSection />
+
+        <Box sx={glassCard}>
+          <Typography variant="body1" sx={{ opacity: 0.85, mb: 2 }}>
+            Get in touch! Whether it's an opportunity or just to chat.
+          </Typography>
+
+          {submitStatus === "error" && (
+            <Alert severity="error" sx={{ mb: 2, borderRadius: "12px" }}>
+              Something went wrong. Please try again.
+            </Alert>
+          )}
+
+          <Box
+            component="form"
+            sx={form}
+            noValidate
+            onChange={onFormChange}
+            onSubmit={handleSubmit}
+          >
+            {/* Name & Email side by side on sm+ */}
+            <Box sx={nameEmailRow}>
+              <TextField
+                sx={{ ...nameEmailField, ...inputSx }}
+                id="name"
+                label="Name"
+                variant="outlined"
+                size="small"
+                required
+                value={formData.name}
+                disabled={submitStatus === "submitting"}
+                {...(nameError ? { error: true, helperText: nameError } : {})}
+              />
+              <TextField
+                sx={{ ...nameEmailField, ...inputSx }}
+                id="yourEmail"
+                type="email"
+                label="Your Email"
+                variant="outlined"
+                size="small"
+                required
+                value={formData.yourEmail}
+                disabled={submitStatus === "submitting"}
+                {...(emailError ? { error: true, helperText: emailError } : {})}
+              />
+            </Box>
+
+            <TextField
+              sx={inputSx}
+              size="small"
+              id="message"
+              label="Message"
+              multiline
+              rows={5}
+              variant="outlined"
+              required
+              value={formData.message}
+              disabled={submitStatus === "submitting"}
+              {...(messageError ? { error: true, helperText: messageError } : {})}
+            />
+
+            <Box sx={{ display: "flex", justifyContent: "flex-end" }}>
+              <Button
+                type="submit"
+                variant="contained"
+                disabled={submitStatus === "submitting"}
+                startIcon={submitStatus === "submitting" ? <CircularProgress size={18} color="inherit" /> : null}
+                sx={submitButton}
+              >
+                {submitStatus === "submitting" ? "Sending..." : "Send Message"}
+              </Button>
+            </Box>
+          </Box>
+        </Box>
       </Box>
-    </Box>
+    </motion.div>
   );
 }
+
+const glassCard = {
+  background: "var(--glass-bg)",
+  backdropFilter: "blur(var(--glass-blur))",
+  WebkitBackdropFilter: "blur(var(--glass-blur))",
+  border: "1px solid var(--glass-border)",
+  borderRadius: "var(--glass-radius)",
+  boxShadow: "var(--glass-shadow)",
+  padding: {
+    xs: "20px 16px",
+    sm: "28px 28px",
+    md: "32px 36px",
+  },
+};
 
 const form = {
   display: "flex",
   flexDirection: "column",
-  gap: "15px",
-  margin: "20px 0",
+  gap: "20px",
 };
 
-const nameEmail = {
-  maxWidth: {
-    sm: "70%",
-    md: "55%",
-    lg: "50%",
+const nameEmailRow = {
+  display: "flex",
+  flexDirection: {
+    xs: "column",
+    sm: "row",
+  },
+  gap: "16px",
+};
+
+const nameEmailField = {
+  flex: 1,
+};
+
+const submitButton = {
+  background: "linear-gradient(135deg, var(--accent), #7c6bff)",
+  borderRadius: "12px",
+  padding: "10px 36px",
+  fontWeight: 600,
+  fontSize: "0.95rem",
+  textTransform: "none" as const,
+  letterSpacing: "0.3px",
+  boxShadow: "var(--accent-glow)",
+  transition: "all 0.3s ease",
+  "&:hover": {
+    background: "linear-gradient(135deg, var(--accent), #7c6bff)",
+    boxShadow: "var(--accent-glow-strong)",
+    transform: "translateY(-1px)",
   },
 };
 
