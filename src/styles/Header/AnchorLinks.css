@@ -1,6 +1,6 @@
 .anchor-links-container {
   display: flex;
-  gap: 4px;
+  gap: 2px;
   font-weight: 600;
   font-size: 11px;
   flex-grow: 1;
@@ -8,8 +8,8 @@
 
 .anchor-links-container > a {
   text-decoration: none;
-  padding: 6px 10px;
-  border-radius: 8px;
+  padding: 5px 6px;
+  border-radius: 6px;
   transition: background 0.25s ease, text-shadow 0.25s ease;
 }
 
@@ -20,12 +20,13 @@
 
 @media screen and (min-width: 380px) {
   .anchor-links-container {
-    font-size: 14px;
-    gap: 6px;
+    font-size: 13px;
+    gap: 4px;
   }
 
   .anchor-links-container > a {
-    padding: 6px 12px;
+    padding: 6px 10px;
+    border-radius: 8px;
   }
 }
 

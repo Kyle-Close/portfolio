@@ -1,15 +1,44 @@
 .app-wrapper {
   max-width: 1100px;
-  margin: 10px 25px;
+  margin: 8px 14px;
   margin-bottom: 10px;
   flex: 1;
   position: relative;
   z-index: 1;
+  width: calc(100% - 28px);
+}
+
+@media screen and (min-width: 480px) {
+  .app-wrapper {
+    margin: 12px 20px;
+    margin-bottom: 10px;
+    width: calc(100% - 40px);
+  }
 }
 
 @media screen and (min-width: 650px) {
   .app-wrapper {
     margin: 50px 35px;
     margin-bottom: 10px;
+    width: auto;
   }
+}
+
+/* Orbs — mobile-first sizing */
+.orb {
+  width: 180px;
+  height: 180px;
+}
+
+@media screen and (min-width: 480px) {
+  .orb {
+    width: 250px;
+    height: 250px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .orb-1 { width: 400px; height: 400px; }
+  .orb-2 { width: 350px; height: 350px; }
+  .orb-3 { width: 300px; height: 300px; }
 }

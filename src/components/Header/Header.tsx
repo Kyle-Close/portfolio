@@ -14,7 +14,7 @@ function Header({ handleThemeToggle, darkMode }: HeaderProps) {
     display: "flex",
     justifyContent: "space-between",
     alignItems: "center",
-    gap: "10px",
+    gap: "8px",
     position: "sticky",
     top: "0",
     zIndex: 10,
@@ -25,12 +25,18 @@ function Header({ handleThemeToggle, darkMode }: HeaderProps) {
     boxShadow: "var(--glass-shadow)",
     transition: "var(--glass-transition)",
     padding: {
-      xs: "10px 16px",
-      sm: "10px 20px",
-      md: "12px 24px",
+      xs: "6px 8px",
+      sm: "8px 16px",
+      md: "10px 24px",
     },
-    borderRadius: "var(--glass-radius)",
-    marginTop: "8px",
+    borderRadius: {
+      xs: "10px",
+      sm: "var(--glass-radius)",
+    },
+    marginTop: {
+      xs: "4px",
+      sm: "8px",
+    },
   };
 
   return (

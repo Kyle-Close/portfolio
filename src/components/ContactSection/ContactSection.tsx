@@ -223,7 +223,7 @@ function ContactSection() {
               {...(messageError ? { error: true, helperText: messageError } : {})}
             />
 
-            <Box sx={{ display: "flex", justifyContent: "flex-end" }}>
+            <Box sx={{ display: "flex", justifyContent: { xs: "stretch", sm: "flex-end" } }}>
               <Button
                 type="submit"
                 variant="contained"
@@ -249,8 +249,8 @@ const glassCard = {
   borderRadius: "var(--glass-radius)",
   boxShadow: "var(--glass-shadow)",
   padding: {
-    xs: "20px 16px",
-    sm: "28px 28px",
+    xs: "14px 12px",
+    sm: "24px 24px",
     md: "32px 36px",
   },
 };
@@ -258,7 +258,10 @@ const glassCard = {
 const form = {
   display: "flex",
   flexDirection: "column",
-  gap: "20px",
+  gap: {
+    xs: "14px",
+    sm: "20px",
+  },
 };
 
 const nameEmailRow = {
@@ -267,7 +270,10 @@ const nameEmailRow = {
     xs: "column",
     sm: "row",
   },
-  gap: "16px",
+  gap: {
+    xs: "14px",
+    sm: "16px",
+  },
 };
 
 const nameEmailField = {
@@ -277,7 +283,14 @@ const nameEmailField = {
 const submitButton = {
   background: "linear-gradient(135deg, var(--accent), #7c6bff)",
   borderRadius: "12px",
-  padding: "10px 36px",
+  padding: {
+    xs: "10px 24px",
+    sm: "10px 36px",
+  },
+  width: {
+    xs: "100%",
+    sm: "auto",
+  },
   fontWeight: 600,
   fontSize: "0.95rem",
   textTransform: "none" as const,

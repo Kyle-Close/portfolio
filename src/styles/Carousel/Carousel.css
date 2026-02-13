@@ -1,5 +1,5 @@
 .carousel-container {
-  height: 120px;
+  height: 100px;
   width: 100%;
   overflow: hidden;
   position: relative;
@@ -8,7 +8,7 @@
   border: 1px solid var(--glass-border);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
-  padding: 12px 0;
+  padding: 10px 0;
 }
 
 .item {
@@ -19,34 +19,52 @@
 }
 
 .item > p {
-  font-size: 10px;
+  font-size: 9px;
   font-weight: 600;
   margin: 0;
 }
 
 .item > img {
-  width: 80%;
+  width: 75%;
 }
 
 .carousel {
   display: flex;
   position: absolute;
   height: 100%;
-  gap: 10px;
+  gap: 8px;
 }
 
 .carousel-img-container {
-  width: 60px;
+  width: 50px;
 }
 
 .carousel-img-container > img {
   width: 100%;
 }
 
+@media screen and (min-width: 480px) {
+  .carousel-container {
+    height: 115px;
+    padding: 12px 0;
+  }
+
+  .carousel-img-container {
+    width: 60px;
+  }
+
+  .item > p {
+    font-size: 10px;
+  }
+
+  .carousel {
+    gap: 10px;
+  }
+}
+
 @media screen and (min-width: 650px) {
   .carousel-container {
     height: 150px;
-    width: 100%;
   }
 
   .carousel-img-container {

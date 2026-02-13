@@ -14,7 +14,7 @@
   --glass-blur: 12px;
   --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
   --glass-shadow-hover: 0 12px 40px rgba(0, 0, 0, 0.4);
-  --glass-radius: 16px;
+  --glass-radius: 12px;
   --glass-transition: all 0.3s ease;
 
   /* Accent */

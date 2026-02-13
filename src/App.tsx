@@ -125,7 +125,7 @@ function App() {
   const orbStyles = {
     position: 'fixed' as const,
     borderRadius: '50%',
-    filter: 'blur(80px)',
+    filter: 'blur(60px)',
     zIndex: 0,
     pointerEvents: 'none' as const,
   };
@@ -135,37 +135,34 @@ function App() {
       <CssBaseline />
       <StyledApp>
         <motion.div
+          className="orb orb-1"
           style={{
             ...orbStyles,
-            width: '400px',
-            height: '400px',
             background: 'var(--orb-1)',
             top: '10%',
-            left: '-5%',
+            left: '-10%',
           }}
           animate={{ x: [0, 30, -20, 0], y: [0, -25, 15, 0] }}
           transition={{ duration: 20, repeat: Infinity, ease: 'easeInOut' }}
         />
         <motion.div
+          className="orb orb-2"
           style={{
             ...orbStyles,
-            width: '350px',
-            height: '350px',
             background: 'var(--orb-2)',
             top: '50%',
-            right: '-8%',
+            right: '-10%',
           }}
           animate={{ x: [0, -25, 20, 0], y: [0, 20, -30, 0] }}
           transition={{ duration: 25, repeat: Infinity, ease: 'easeInOut' }}
         />
         <motion.div
+          className="orb orb-3"
           style={{
             ...orbStyles,
-            width: '300px',
-            height: '300px',
             background: 'var(--orb-3)',
             bottom: '10%',
-            left: '30%',
+            left: '20%',
           }}
           animate={{ x: [0, 20, -15, 0], y: [0, -20, 25, 0] }}
           transition={{ duration: 22, repeat: Infinity, ease: 'easeInOut' }}

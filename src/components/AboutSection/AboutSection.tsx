@@ -45,8 +45,8 @@ const glassCard = {
   borderRadius: "var(--glass-radius)",
   boxShadow: "var(--glass-shadow)",
   padding: {
-    xs: "16px",
-    sm: "20px",
+    xs: "12px 10px",
+    sm: "18px 20px",
     md: "24px",
   },
 };

@@ -16,7 +16,7 @@ function Projects({ darkMode }: ProjectsProps) {
     return (
       <motion.div
         className="glass-card"
-        style={{ padding: "24px" }}
+        style={{ width: "100%" }}
         key={key}
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -24,18 +24,20 @@ function Projects({ darkMode }: ProjectsProps) {
         transition={{ duration: 0.5, delay: key * 0.1, ease: "easeOut" }}
         whileHover={{ scale: 1.015 }}
       >
-        <Box sx={innerContainer}>
-          <Box sx={textAndButtonsContainer}>
-            <ProjectText
-              title={data.name}
-              technologies={data.techStack}
-              description={data.description}
-            />
-            <ProjectButtons live={data.live} source={data.source} />
-          </Box>
+        <Box sx={cardPadding}>
+          <Box sx={innerContainer}>
+            <Box sx={textAndButtonsContainer}>
+              <ProjectText
+                title={data.name}
+                technologies={data.techStack}
+                description={data.description}
+              />
+              <ProjectButtons live={data.live} source={data.source} />
+            </Box>
 
-          <Box sx={imgContainer}>
-            <ProjectImg src={darkMode ? data.imgDark : data.imgLight} name={data.name} />
+            <Box sx={imgContainer}>
+              <ProjectImg src={darkMode ? data.imgDark : data.imgLight} name={data.name} />
+            </Box>
           </Box>
         </Box>
       </motion.div>
@@ -45,11 +47,22 @@ function Projects({ darkMode }: ProjectsProps) {
   return <>{projects}</>;
 }
 
+const cardPadding = {
+  padding: {
+    xs: "14px 12px",
+    sm: "20px",
+    md: "24px",
+  },
+};
+
 const innerContainer = {
   display: "flex",
   flexGrow: "1",
   flexWrap: "wrap",
-  gap: "15px",
+  gap: {
+    xs: "12px",
+    sm: "15px",
+  },
 };
 
 const textAndButtonsContainer = {
@@ -63,6 +76,7 @@ const imgContainer = {
   flexGrow: "1",
   display: "flex",
   justifyContent: {
+    xs: "center",
     sm: "center",
   },
   alignItems: {

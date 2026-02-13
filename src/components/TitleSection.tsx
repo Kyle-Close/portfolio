@@ -45,18 +45,18 @@ const heroSection = {
   flexWrap: "wrap",
   justifyContent: "space-between",
   marginTop: {
-    xs: "24px",
-    sm: "32px",
+    xs: "16px",
+    sm: "28px",
     md: "48px",
   },
   marginBottom: {
-    xs: "16px",
-    sm: "20px",
+    xs: "8px",
+    sm: "16px",
     md: "28px",
   },
   padding: {
-    xs: "0 4px",
-    sm: "0 8px",
+    xs: "0",
+    sm: "0 4px",
   },
 };
 

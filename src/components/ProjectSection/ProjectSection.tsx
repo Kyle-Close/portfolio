@@ -45,7 +45,11 @@ const projectHeading = {
 const projectContainer = {
   display: "flex",
   flexWrap: "wrap",
-  gap: "30px",
+  gap: {
+    xs: "16px",
+    sm: "24px",
+    md: "30px",
+  },
 };
 
 export default ProjectSection;
