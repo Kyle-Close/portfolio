@@ -111,7 +111,7 @@ function App() {
     background: 'var(--bg-gradient)',
     minHeight: '100vh',
     position: 'relative',
-    overflow: 'hidden',
+    overflow: 'clip',
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
