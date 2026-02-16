@@ -1,0 +1,56 @@
+.theme-toggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 6px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.25s ease;
+  flex-shrink: 0;
+}
+
+.theme-toggle:hover {
+  background: var(--glass-bg-hover);
+}
+
+.theme-toggle svg {
+  width: 24px;
+  height: 24px;
+}
+
+/* Sun body / moon circle */
+.theme-toggle .sun-body {
+  transform-origin: center;
+}
+
+/* Sun rays */
+.theme-toggle .sun-rays line {
+  stroke: var(--accent);
+  stroke-width: 2;
+  stroke-linecap: round;
+  transform-origin: center;
+  transition: opacity 0.3s ease, transform 0.4s ease;
+}
+
+/* Moon mask — the circle that overlaps to form the crescent */
+.theme-toggle .moon-mask {
+  transition: transform 0.5s ease;
+  transform: translateX(10px);
+}
+
+/* --- Dark mode (default :root): show sun --- */
+.sun-body {
+  fill: var(--accent);
+}
+
+/* --- Light mode: morph into moon --- */
+[data-theme="light"] .theme-toggle .sun-rays line {
+  opacity: 0;
+  transform: scale(0);
+}
+
+[data-theme="light"] .theme-toggle .moon-mask {
+  transform: translateX(0);
+}
