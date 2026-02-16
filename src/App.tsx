@@ -171,7 +171,7 @@ function App() {
           <Header handleThemeToggle={handleThemeToggle} darkMode={darkMode} />
           <TitleSection darkMode={darkMode} />
           <AboutSection />
-          <ProjectSection darkMode={darkMode} />
+          <ProjectSection />
           <ContactSection />
           <Footer />
         </div>

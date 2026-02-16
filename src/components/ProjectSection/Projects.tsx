@@ -7,11 +7,7 @@ import ProjectData from "../../data/projectData";
 import { Box } from "@mui/material";
 import { motion } from "framer-motion";
 
-interface ProjectsProps {
-  darkMode: boolean;
-}
-
-function Projects({ darkMode }: ProjectsProps) {
+function Projects() {
   const projects = ProjectData.map((data, key) => {
     return (
       <motion.div
@@ -36,7 +32,7 @@ function Projects({ darkMode }: ProjectsProps) {
             </Box>
 
             <Box sx={imgContainer}>
-              <ProjectImg src={darkMode ? data.imgDark : data.imgLight} name={data.name} />
+              <ProjectImg src={data.img} name={data.name} />
             </Box>
           </Box>
         </Box>

@@ -3,11 +3,7 @@ import Projects from "./Projects";
 import { lineSeparator } from "../TitleSection";
 import { motion } from "framer-motion";
 
-interface ProjectSectionProps {
-  darkMode: boolean;
-}
-
-function ProjectSection({ darkMode }: ProjectSectionProps) {
+function ProjectSection() {
   return (
     <motion.div
       initial={{ opacity: 0, y: 30 }}
@@ -20,7 +16,7 @@ function ProjectSection({ darkMode }: ProjectSectionProps) {
           Projects
         </Typography>
         <Box sx={projectContainer}>
-          <Projects darkMode={darkMode} />
+          <Projects />
         </Box>
         <Box sx={lineSeparator}></Box>
       </Box>

@@ -17,6 +17,12 @@
   --glass-radius: 12px;
   --glass-transition: all 0.3s ease;
 
+  /* Browser chrome */
+  --browser-chrome-bg: #1e1e1e;
+  --browser-toolbar-bg: #2d2d2d;
+  --browser-url-bg: rgba(255, 255, 255, 0.08);
+  --browser-url-color: rgba(255, 255, 255, 0.5);
+
   /* Accent */
   --accent: #599cff;
   --accent-glow: 0 0 8px rgba(89, 156, 255, 0.4);
@@ -37,6 +43,12 @@
   --glass-border-hover: rgba(255, 255, 255, 0.8);
   --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
   --glass-shadow-hover: 0 12px 40px rgba(0, 0, 0, 0.12);
+
+  /* Browser chrome */
+  --browser-chrome-bg: #e8e8e8;
+  --browser-toolbar-bg: #f0f0f0;
+  --browser-url-bg: rgba(0, 0, 0, 0.06);
+  --browser-url-color: rgba(0, 0, 0, 0.5);
 
   --accent: #3b7ddb;
   --accent-glow: 0 0 8px rgba(59, 125, 219, 0.3);
