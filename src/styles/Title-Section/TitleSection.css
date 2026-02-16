@@ -70,9 +70,6 @@
   }
 }
 
-@media screen and (min-width: 650px) {
-}
-
 @media (prefers-reduced-motion: reduce) {
   .name, .web-developer, .web-img-container {
     animation: none;

@@ -3,7 +3,7 @@ import Typography from "@mui/material/Typography";
 import "../styles/Title-Section/TitleSection.css";
 import WebImgDark from "../img/web.svg";
 import WebImgLight from "../img/web-light.svg";
-import { Box } from "@mui/material";
+import { Box, Link } from "@mui/material";
 
 interface TitleSectionProps {
   darkMode: boolean;
@@ -12,6 +12,14 @@ interface TitleSectionProps {
 function TitleSection({ darkMode }: TitleSectionProps) {
   return (
     <Box sx={heroSection}>
+      <Link
+        href="/Kyle_Close_Resume.pdf"
+        target="_blank"
+        rel="noopener noreferrer"
+        sx={resumeButton}
+      >
+        Resume
+      </Link>
       <Typography sx={intro} variant="h6" component="h6">
         Hi, my name is
       </Typography>
@@ -109,6 +117,32 @@ const webDev = {
     md: "1.5rem",
   },
   fontFamily: "Roboto Slab",
+};
+
+const resumeButton = {
+  textDecoration: "none",
+  fontWeight: 600,
+  fontSize: {
+    xs: "0.85rem",
+    sm: "0.95rem",
+    md: "1rem",
+  },
+  padding: {
+    xs: "8px 24px",
+    sm: "10px 32px",
+  },
+  marginBottom: {
+    xs: "16px",
+    sm: "20px",
+  },
+  borderRadius: "20px",
+  border: "1px solid var(--accent)",
+  color: "var(--accent)",
+  transition: "background 0.25s ease, box-shadow 0.25s ease",
+  "&:hover": {
+    background: "var(--glass-bg-hover)",
+    boxShadow: "var(--accent-glow)",
+  },
 };
 
 export const lineSeparator = {

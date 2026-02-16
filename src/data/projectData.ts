@@ -1,6 +1,6 @@
-import progressionImg from '../img/progression.png';
-import chessImg from '../img/chess.png';
-import asteroidsImg from '../img/asteroids.png';
+import progressionImg from '../img/progression.webp';
+import chessImg from '../img/chess.webp';
+import asteroidsImg from '../img/asteroids.webp';
 
 const ProjectData = [
   {

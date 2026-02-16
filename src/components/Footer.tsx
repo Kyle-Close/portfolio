@@ -17,7 +17,7 @@ function Footer() {
         }}
         variant="body1"
       >
-        © 2025 | Designed & built by Kyle Close
+        © 2026 | Designed & built by Kyle Close
       </Typography>
     </Box>
   );

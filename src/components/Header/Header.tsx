@@ -1,5 +1,4 @@
 import React from "react";
-import "../../styles/Header/Header.css";
 import AnchorLinks from "./AnchorLinks";
 import ThemeToggler from "./ThemeToggler";
 import { Box } from "@mui/material";

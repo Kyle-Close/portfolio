@@ -8,17 +8,19 @@ interface ProjectButtonsProps {
 function ProjectButtons({ live, source }: ProjectButtonsProps) {
   return (
     <Box sx={buttonContainer}>
-      <Button
-        href={live}
-        color="secondary"
-        size="large"
-        sx={liveButton}
-        variant="outlined"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        Live
-      </Button>
+      {live && (
+        <Button
+          href={live}
+          color="secondary"
+          size="large"
+          sx={liveButton}
+          variant="outlined"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Live
+        </Button>
+      )}
       <Button
         href={source}
         sx={sourceButton}
