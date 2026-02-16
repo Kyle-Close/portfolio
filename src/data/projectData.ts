@@ -17,7 +17,7 @@ const ProjectData = [
     techStack: ['.NET', 'React', 'Typescript'],
     description:
       'A full-stack chess application built with .NET and React, featuring real-time move validation, game state tracking, and Stockfish integration for AI-powered analysis.',
-    source: 'https://github.com/Kyle-Close/Knights-Travails',
+    source: 'https://github.com/Kyle-Close/chess',
     live: 'https://kyle-close.github.io/chess/',
     img: chessImg,
   },
