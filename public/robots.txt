@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://kyle-close.github.io/portfolio/sitemap.xml
