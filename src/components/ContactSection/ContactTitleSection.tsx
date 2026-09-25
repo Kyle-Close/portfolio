@@ -2,11 +2,18 @@ import { Box, ButtonBase, Typography } from "@mui/material";
 
 import linkedIn from "../../img/linkedin.svg";
 import gitHub from "../../img/github.svg";
+import mail from "../../img/mail.svg";
 
 function ContactTitleSection() {
   return (
     <Box sx={titleContainer}>
       <Typography variant="h3">Contact</Typography>
+      <ButtonBase
+        href="mailto:k.james.close@gmail.com"
+        sx={mailButton}
+      >
+        <img src={mail} alt="Email" style={{ width: "100%" }} />
+      </ButtonBase>
       <ButtonBase
         href="https://www.linkedin.com/in/kyle-close/"
         target="_blank"
@@ -32,6 +39,10 @@ const titleContainer = {
   display: "flex",
   alignItems: "center",
   gap: "15px",
+};
+
+const mailButton = {
+  width: "30px",
 };
 
 const linkedinButton = {
