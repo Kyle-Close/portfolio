@@ -14,9 +14,9 @@ const ProjectData = [
   },
   {
     name: 'Chess',
-    techStack: ['.NET', 'React', 'Typescript'],
+    techStack: ['.NET', 'React', 'TypeScript'],
     description:
-      'A full-stack chess application built with .NET and React, featuring real-time move validation, game state tracking, and Stockfish integration for AI-powered analysis.',
+      'A full-stack chess application with a .NET API that enforces the complete rules of chess and a React front end. Play pass-and-play with chess clocks, or take on Stockfish at 21 strength levels, starting from any position.',
     source: 'https://github.com/Kyle-Close/chess',
     live: 'https://kyle-close.github.io/chess/',
     img: chessImg,
