@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" font-family="'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Consolas, monospace">
+  <defs>
+    <radialGradient id="felt" cx="50%" cy="0%" r="90%">
+      <stop offset="0" stop-color="#0f3b27"/>
+      <stop offset="1" stop-color="#0a0c10"/>
+    </radialGradient>
+    <g id="card">
+      <rect width="150" height="210" rx="14" fill="#f4f6f9" stroke="#d0d7e2" stroke-width="2"/>
+    </g>
+  </defs>
+
+  <rect width="1600" height="1000" fill="url(#felt)"/>
+
+  <!-- cards -->
+  <g transform="translate(1110 120) rotate(-8)">
+    <use href="#card"/>
+    <text x="20" y="52" font-size="44" font-weight="700" fill="#11151c">A</text>
+    <text x="75" y="140" font-size="72" text-anchor="middle" fill="#11151c">♠</text>
+  </g>
+  <g transform="translate(1250 110) rotate(6)">
+    <use href="#card"/>
+    <text x="20" y="52" font-size="44" font-weight="700" fill="#d8344a">K</text>
+    <text x="75" y="140" font-size="72" text-anchor="middle" fill="#d8344a">♥</text>
+  </g>
+  <text x="1260" y="400" font-size="30" font-weight="700" fill="#3ee08f" text-anchor="middle">BLACKJACK · 3:2</text>
+
+  <!-- terminal output -->
+  <g font-size="30">
+    <text x="90" y="150" fill="#3ee08f" font-weight="700">$ <tspan fill="#e6edf3" font-weight="400">npm start</tspan></text>
+    <text x="90" y="220" fill="#7d8590">// simulating 10,000 rounds · 6 seats · 4-deck shoe</text>
+
+    <text x="90" y="300" fill="#7d8590">strategy</text>
+    <text x="380" y="300" fill="#5ab0ff">"dealer"</text>
+    <text x="90" y="350" fill="#7d8590">hands</text>
+    <text x="380" y="350" fill="#e6edf3">60,000</text>
+    <text x="90" y="400" fill="#7d8590">wagered</text>
+    <text x="380" y="400" fill="#e6edf3">60,000</text>
+    <text x="90" y="450" fill="#7d8590">net</text>
+    <text x="380" y="450" fill="#ff7b72">-4,185.5</text>
+    <text x="90" y="500" fill="#7d8590">house edge</text>
+    <text x="380" y="500" fill="#3ee08f" font-weight="700">6.98%</text>
+
+    <text x="90" y="590" fill="#7d8590">→ appended to data.csv</text>
+
+    <text x="90" y="690" fill="#3ee08f" font-weight="700">$ <tspan fill="#e6edf3" font-weight="400">npm test</tspan></text>
+    <text x="90" y="750" fill="#3ee08f">✓ <tspan fill="#e6edf3">deck · shoe · dealer · player · engine · handEvaluator</tspan></text>
+  </g>
+
+  <!-- wip badge -->
+  <g transform="translate(90 850)">
+    <rect width="470" height="64" rx="32" fill="none" stroke="#3ee08f" stroke-width="2" stroke-dasharray="8 8"/>
+    <text x="235" y="42" font-size="26" fill="#3ee08f" text-anchor="middle">front end in progress</text>
+  </g>
+</svg>

@@ -1,0 +1,130 @@
+.hero {
+  display: grid;
+  gap: 48px;
+  align-items: center;
+  min-height: calc(100svh - var(--tabbar-h) - var(--statusbar-h));
+  padding-top: 48px;
+  padding-bottom: 64px;
+}
+
+.hero-copy {
+  min-width: 0;
+}
+
+.hero-comment {
+  margin: 0 0 12px;
+  font-size: 0.9rem;
+}
+
+.hero-name {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  font-size: clamp(3.6rem, 17vw, 7.5rem);
+  font-weight: 800;
+  line-height: 0.92;
+  letter-spacing: -0.04em;
+  color: var(--text);
+  cursor: default;
+  user-select: none;
+}
+
+[data-theme="dark"] .hero-name {
+  text-shadow: 0 0 40px rgba(var(--accent-rgb), 0.15);
+}
+
+.hero-name-dot {
+  color: var(--accent);
+  text-shadow: 0 0 24px rgba(var(--accent-rgb), 0.8);
+}
+
+.hero-role {
+  margin: 24px 0 0;
+  font-size: clamp(0.85rem, 3.4vw, 1.05rem);
+}
+
+.hero-ctas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+.hero-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 16px 24px;
+  margin-top: 32px;
+  font-size: 0.8rem;
+  color: var(--text-dim);
+}
+
+.hero-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.pulse {
+  position: relative;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--accent);
+}
+
+.pulse::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: var(--accent);
+  animation: ping 1.8s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
+
+@keyframes ping {
+  75%, 100% { transform: scale(3); opacity: 0; }
+}
+
+.hero-socials {
+  display: inline-flex;
+  gap: 6px;
+}
+
+.hero-socials a {
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border);
+  background: var(--panel);
+  color: var(--text-dim);
+  transition: color 0.2s ease, border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.hero-socials a:hover {
+  color: var(--accent);
+  border-color: var(--accent);
+  box-shadow: var(--glow);
+  transform: translateY(-2px);
+}
+
+.hero-socials svg {
+  width: 17px;
+  height: 17px;
+}
+
+.hero-terminal {
+  min-width: 0;
+  perspective: 1200px;
+}
+
+@media (min-width: 960px) {
+  .hero {
+    grid-template-columns: 1.05fr 1fr;
+    gap: 56px;
+    padding-top: 32px;
+  }
+}

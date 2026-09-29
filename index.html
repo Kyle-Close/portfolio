@@ -1,24 +1,32 @@
 
 <!doctype html>
-<html lang="en">
+<html lang="en" data-theme="dark">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;700;800&display=swap"
+    />
     <title>Kyle Close | Portfolio</title>
     <meta name="description" content="Kyle Close — full-stack developer portfolio showcasing React, TypeScript, .NET, and Node.js projects." />
     <meta property="og:title" content="Kyle Close | Portfolio" />
     <meta property="og:description" content="Full-stack developer portfolio showcasing React, TypeScript, .NET, and Node.js projects." />
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://kyle-close.github.io/portfolio/" />
-    <meta name="theme-color" content="#1976d2" />
-    <link rel="icon" type="image/svg+xml" href="/portfolio/favicon.svg">
-    <meta property="og:image" content="https://kyle-close.github.io/portfolio/favicon.svg" />
+    <meta property="og:url" content="https://kyleclose.dev/" />
+    <meta name="theme-color" content="#0a0c10" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <meta property="og:image" content="https://kyleclose.dev/favicon.svg" />
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:title" content="Kyle Close | Portfolio" />
     <meta name="twitter:description" content="Full-stack developer portfolio showcasing React, TypeScript, .NET, and Node.js projects." />
-    <meta name="twitter:image" content="https://kyle-close.github.io/portfolio/favicon.svg" />
+    <meta name="twitter:image" content="https://kyleclose.dev/favicon.svg" />
+    <script>
+      // Apply the saved theme before first paint to avoid a flash.
+      (function(){try{var t=localStorage.getItem('theme');if(t==='light'||t==='dark'){document.documentElement.setAttribute('data-theme',t)}}catch(e){}})();
+    </script>
   </head>
   <body>
     <div id="root"></div>

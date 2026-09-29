@@ -1,0 +1,200 @@
+.contact-grid {
+  display: grid;
+  gap: 36px;
+  align-items: start;
+}
+
+.contact-copy,
+.contact-form-wrap {
+  min-width: 0;
+}
+
+.contact-lead {
+  margin: 0 0 24px;
+  font-size: 1.2rem;
+  line-height: 1.55;
+}
+
+.contact-channels {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.channel {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 12px 14px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--panel);
+  text-decoration: none;
+  transition: border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.channel:hover {
+  border-color: var(--accent);
+  box-shadow: var(--glow);
+  transform: translateX(4px);
+}
+
+.channel-icon {
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-sm);
+  background: var(--panel-2);
+  color: var(--accent);
+  flex-shrink: 0;
+}
+
+.channel-icon svg {
+  width: 19px;
+  height: 19px;
+}
+
+.channel-text {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  line-height: 1.35;
+}
+
+.channel-label {
+  font-size: 0.72rem;
+  color: var(--text-faint);
+}
+
+.channel-value {
+  font-size: 0.88rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.channel-go {
+  margin-left: auto;
+  color: var(--text-faint);
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.channel:hover .channel-go {
+  color: var(--accent);
+  transform: translateX(3px);
+}
+
+/* ---------- Form ---------- */
+.cf {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  padding: 20px 16px;
+}
+
+.cf-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.cf-label {
+  font-size: 0.82rem;
+  font-weight: 500;
+}
+
+.cf-q {
+  color: var(--accent);
+  font-weight: 700;
+}
+
+.cf-arrow {
+  color: var(--text-faint);
+}
+
+.cf input,
+.cf textarea {
+  width: 100%;
+  padding: 11px 13px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  background: var(--bg-soft);
+  font-family: var(--font-mono);
+  font-size: 16px;
+  caret-color: var(--accent);
+  resize: vertical;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.cf input::placeholder,
+.cf textarea::placeholder {
+  color: var(--text-faint);
+}
+
+.cf input:focus,
+.cf textarea:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(var(--accent-rgb), 0.18);
+}
+
+.cf-field.has-error input,
+.cf-field.has-error textarea {
+  border-color: var(--danger);
+}
+
+.cf-error {
+  font-size: 0.76rem;
+  color: var(--danger);
+}
+
+.cf-error-banner {
+  margin: 0;
+}
+
+.cf-submit {
+  align-self: stretch;
+}
+
+.cf-done {
+  padding: 28px 20px;
+  font-size: 0.9rem;
+}
+
+.cf-done p {
+  margin: 0 0 10px;
+}
+
+.cf-done .btn {
+  margin-top: 10px;
+}
+
+.spinner {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  border: 2px solid currentColor;
+  border-right-color: transparent;
+  animation: spin 0.7s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+@media (min-width: 640px) {
+  .cf { padding: 24px; }
+  .cf input, .cf textarea { font-size: 0.9rem; }
+  .cf-submit { align-self: flex-end; }
+}
+
+@media (min-width: 900px) {
+  .contact-grid {
+    grid-template-columns: 0.9fr 1.1fr;
+    gap: 48px;
+  }
+}
